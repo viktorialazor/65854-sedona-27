@@ -19,41 +19,39 @@
     </nav>
   </header>
   <main>
-    <h1>Добро пожаловать в Седону</h1>
     <section class="banner">
       <img src="https://via.placeholder.com/1200x510" alt="">
     </section>
     <section class="advantages">
       <p class="advantages__text">
-        <span>Седона — небольшой городок в Аризоне, заслуживающий большего!</span>
-        <span>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</span>
+        <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
+        <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
       </p>
     </section>
-    <!-- Как правильно назвать  этот  блок, можно ли назвать  "searchHotel" или название должно быть  более абстрактным,  тогда  можно ли назвать "callToAction" или "searchBlock"?-->
-    <section class="searchBlock">
-      <p class="searchBlock__text">
-        <span>Заинтересовались?</span> <!-- Это  похоже на заголовок h2, как правильно писать  как h2 или span?-->
-        <span>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</span>
-      </p>
-      <div class="searchBlock_form">
-        <button type="button">Поиск гостиницы в Седоне</button> <!-- Это  кнопка над картой  при клике на которую  появляется  форма?-->
-        <form></form>
-      </div>
+    <!-- Получается обертка "searchHotel__text" лишняя, а форма должна быть  обернута в div и находится  под section? -->
+    <section class="searchHotel">
+      <span>Заинтересовались?</span> <!-- Это  похоже на заголовок h2, как правильно писать  как h2 или span?-->
+      <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      <button type="button">Поиск гостиницы в Седоне</button>
     </section>
+    <div class="searchHotelForm">
+      <form></form>
+    </div>
   </main>
   <footer>
     <p>
-      <a href="">#visitSEDONA</a> <!-- Здесь должна быть  ссылка или это  просто  текст?  -->
+      <a href="./index.html">#visitSEDONA</a>
       <a href="">Тел: +7(495) 666-02-66</a>
     </p>
+    <!-- В разборе где-то  в этом  месте  написано "а это откуда?"  не пойму к чему относится? -->
     <ul>
       <li><a href="">Твиттер</a></li>
       <li><a href="">Фейсбук</a></li>
       <li><a href="">Ютуб</a></li>
     </ul>
     <p>
-      Website by 
-      <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">HTML Academy</a> <!-- Логотип  html academy правильно сделать  как img или через css?-->
+      <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank"> Website by</a>
+      <img src="https://via.placeholder.com/115x41" alt="">
     </p>
   </footer>
 </body>
