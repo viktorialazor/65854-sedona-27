@@ -85,7 +85,31 @@
       <button type="button">Поиск гостиницы в Седоне</button>
     </section>
     <div class="searchHotelForm">
-      <form></form>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="arrival-date">Дата заезда:</label>
+          <input id="arrival-date" type="text" name="arrival-date" placeholder="24 апреля 2017">
+        </p>
+        <p>
+          <label for="departure-date">Дата выезда:</label>
+          <input id="departure-date" type="text" name="departure-date" placeholder="4 июля 2017">
+        </p>
+        <p>
+          <p>
+            <label for="adult">Взрослые:</label>
+            <button type="button" aria-label="Отнять">-</button>
+            <input id="adult" type="number" name="adult" placeholder="2">
+            <button type="button" aria-label="Добавить">+</button>
+          </p>
+          <p>
+            <label for="children">Дети:</label>
+            <button type="button" aria-label="Отнять">-</button>
+            <input id="children" type="number" name="children" placeholder="0">
+            <button type="button" aria-label="Добавить">+</button>
+          </p>
+        </p>
+        <button type="submit">Найти</button>
+      </form>
     </div>
   </main>
   <footer>
