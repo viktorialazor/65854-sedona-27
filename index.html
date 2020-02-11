@@ -97,15 +97,19 @@
         <p>
           <p>
             <label for="adult">Взрослые:</label>
-            <button type="button" aria-label="Отнять">-</button>
-            <input id="adult" type="number" name="adult" placeholder="2">
-            <button type="button" aria-label="Добавить">+</button>
+            <span>
+              <button type="button" aria-label="Уменьшить"></button>
+              <input id="adult" type="number" name="adult" placeholder="2">
+              <button type="button" aria-label="Увеличить"></button>
+            </span>
           </p>
           <p>
             <label for="children">Дети:</label>
-            <button type="button" aria-label="Отнять">-</button>
-            <input id="children" type="number" name="children" placeholder="0">
-            <button type="button" aria-label="Добавить">+</button>
+            <span>
+              <button type="button" aria-label="Уменьшить"></button>
+              <input id="children" type="number" name="children" placeholder="0">
+              <button type="button" aria-label="Увеличить"></button>
+            </span>
           </p>
         </p>
         <button type="submit">Найти</button>
