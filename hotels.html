@@ -17,6 +17,64 @@
     </nav>
   </header>
   <main>
+    <section class="filtersHotels">
+      <h2 class="visually-hidden">Фильтр гостиниц</h2>
+      <form class="filtersHotels__form" action="https://echo.htmlacademy.ru" method="get">
+        <div class="filtersHotels__column">
+          <fieldset>
+            <legend>Инфраструктура:</legend>
+            <ul class="filtersHotels__list">
+              <li class="filtersHotels__item">
+                <input id="filtersHotels__pool" type="checkbox" name="pool" checked>
+                <label for="filtersHotels__pool">Бассейн</label>
+              </li>
+              <li class="filtersHotels__item">
+                <input id="filtersHotels__parking" type="checkbox" name="parking">
+                <label for="filtersHotels__parking">Парковка</label>
+              </li>
+              <li class="filtersHotels__item">
+                <input id="filtersHotels__wifi" type="checkbox" name="wifi">
+                <label for="filtersHotels__wifi">Wi-Fi</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Тип жилья:</legend>
+            <ul class="filtersHotels__list">
+              <li class="filtersHotels__item">
+                <input id="filtersHotels__hotel" type="checkbox" name="hotel" checked>
+                <label for="filtersHotels__hotel">Гостиница</label>
+              </li>
+              <li class="filtersHotels__item">
+                <input id="filtersHotels__motel" type="checkbox" name="motel" checked>
+                <label for="filtersHotels__motel">Мотель</label>
+              </li>
+              <li class="filtersHotels__item">
+                <input id="filtersHotels__apartment" type="checkbox" name="apartment" checked>
+                <label for="filtersHotels__apartment">Апартаменты</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="filtersHotels__column">
+          <fieldset>
+            <legend>Стоимость в сутки (Р):</legend>
+            <p class="filtersHotels__sumShow">
+              <span>от 0</span>
+              <span>До 3000</span>
+            </p>
+            <!-- Не знаю как разметить   эту  часть , круглые ползунки это  кнопки или span? -->
+            <p class="filtersHotels__sumRange">
+              <label class="visually-hidden" for="filtersHotels__range">Диапазон сумм</label>
+              <button class="filtersHotels__sumMin" type="button"></button>
+              <input id="filtersHotels__range" type="range" name="">
+              <button class="filtersHotels__sumMax" type="button"></button>
+            </p>
+          </fieldset>
+          <button class="filtersHotels__submit" type="submit">Показать</button>
+        </div>
+      </form>
+    </section>
     <div class="sortingHotels">
       <span>Найдено: <small>3</small></span>
       <span>Сортировка:</span>
