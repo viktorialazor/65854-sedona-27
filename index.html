@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body>
-  <header>
-    <nav>
-      <a aria-label="Логотип Седона"></a>
-      <ul>
+<body class="indexPage">
+  <header class="siteHeader">
+    <nav class="siteHeader__navigation">
+      <a class="siteHeader__logo" aria-label="Логотип Седона"></a>
+      <ul class="siteHeader__menu">
         <li><a href="">Информация</a></li>
         <li><a href="">Фото и видео</a></li>
         <li><a href="">Карта штата</a></li>
@@ -86,16 +89,16 @@
     </section>
     <div class="searchHotelForm">
       <form action="https://echo.htmlacademy.ru" method="post">
-        <p>
+        <p class="searchHotelForm__row">
           <label for="arrival-date">Дата заезда:</label>
           <input id="arrival-date" type="text" name="arrival-date" placeholder="24 апреля 2017">
         </p>
-        <p>
+        <p class="searchHotelForm__row">
           <label for="departure-date">Дата выезда:</label>
           <input id="departure-date" type="text" name="departure-date" placeholder="4 июля 2017">
         </p>
-        <p>
-          <p>
+        <p class="searchHotelForm__row">
+          <p class="searchHotelForm__column">
             <label for="adult">Взрослые:</label>
             <span>
               <button type="button" aria-label="Уменьшить"></button>
@@ -103,7 +106,7 @@
               <button type="button" aria-label="Увеличить"></button>
             </span>
           </p>
-          <p>
+          <p class="searchHotelForm__column">
             <label for="children">Дети:</label>
             <span>
               <button type="button" aria-label="Уменьшить"></button>
@@ -112,21 +115,21 @@
             </span>
           </p>
         </p>
-        <button type="submit">Найти</button>
+        <button class="searchHotelForm__submit" type="submit">Найти</button>
       </form>
     </div>
   </main>
-  <footer>
-    <p>
+  <footer class="siteFooter">
+    <p class="siteFooter__contacts">
       <a href="./index.html">#visitSEDONA</a>
       <a href="">Тел: +7(495) 666-02-66</a>
     </p>
-    <ul>
+    <ul class="siteFooter__social">
       <li><a href="">Твиттер</a></li>
       <li><a href="">Фейсбук</a></li>
       <li><a href="">Ютуб</a></li>
     </ul>
-    <p>
+    <p class="siteFooter__dev">
       <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Логотип html academy" target="_blank">Website by</a>
     </p>
   </footer>

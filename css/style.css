@@ -1,0 +1,369 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px; /*Какая должна быть  высота  строки , она в макете  у шрифта  14px бывает  21px и 26px?*/
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000000;
+  
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Page Index */
+
+/* Header */
+
+.siteHeader__menu {
+  list-style: none;
+}
+
+.siteHeader__menu a {
+  color: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  
+  transition: color 0.3s;
+}
+
+.siteHeader__menu a:hover,
+.siteHeader__menu a:focus {
+  color: #81b3d2;
+}
+
+.siteHeader__menu a:focus {
+  outline: none;
+}
+
+.siteHeader__menu a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* Main */
+
+/* Banner */
+
+.banner {
+  background-color: #81b3d2;
+}
+
+/* Advantages */
+
+.advantages__heading h1 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.advantages__heading p {
+  color: #333333;
+  line-height: 26px;
+}
+
+/* Search hotel */
+
+.searchHotel span {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.searchHotel p {
+  color: #333333;
+  line-height: 24px;
+}
+
+.searchHotel button {
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: inherit;
+  color: #ffffff;
+  
+  background-color: #766357;
+  border: none;
+  
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.searchHotel button:hover,
+.searchHotel button:focus {
+  background-color: #604e43;
+}
+
+.searchHotel button:focus {
+  outline: none;
+}
+
+.searchHotel button:active {
+  color: rgba(255, 255, 255, 0.3);
+  
+  background-color: #503e33;
+}
+
+/* Search hotel form */
+
+.searchHotelForm label {
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.searchHotelForm input[type="text"],
+.searchHotelForm input[type="number"] {
+  background-color: #f2f2f2;
+  border: 2px solid transparent;
+  
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.searchHotelForm input[type="text"]:hover,
+.searchHotelForm input[type="number"]:hover {
+  background-color: #ebebeb;
+}
+
+.searchHotelForm input[type="text"]:focus,
+.searchHotelForm input[type="number"]:focus {
+  background-color: #ffffff;
+  border-color: #e5e5e5;
+  outline: none;
+}
+
+.searchHotelForm input[type="text"]::-webkit-input-placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="text"]:-ms-input-placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="text"]::-ms-input-placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="text"]::placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="number"]::-webkit-input-placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="number"]:-ms-input-placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="number"]::-ms-input-placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm input[type="number"]::placeholder {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.searchHotelForm__submit {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: inherit;
+  color: #ffffff;
+  
+  background-color: #81b3d2;
+  border: none;
+  
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.searchHotelForm__submit:hover,
+.searchHotelForm__submit:focus {
+  background-color: #669ec0;
+}
+
+.searchHotelForm__submit:focus {
+  outline: none;
+}
+
+.searchHotelForm__submit:active {
+  color: rgba(255, 255, 255, 0.3);
+  
+  background-color: #5496bd;
+}
+
+/* Footer */
+
+.siteFooter__contacts {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.siteFooter__contacts a {
+  color: inherit;
+  
+  transition: color 0.3s;
+}
+
+/* Сделала по аналогии с ссылками в хедере, в макете  этот   момент  не показан*/
+.siteFooter__contacts a:hover,
+.siteFooter__contacts a:focus {
+  color: #81b3d2;
+}
+
+.siteFooter__contacts a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.siteFooter__dev {
+  line-height: 26px;
+}
+
+.siteFooter__dev a {
+  color: inherit;
+}
+
+/* Page Hotels */
+
+/* Hotels */
+
+.hotels__list {
+  list-style: none;
+}
+
+.hotels__img {
+  background-color: #81b3d2;
+}
+
+.hotels__title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.hotels__title a {
+  color: inherit;
+  
+  transition: color 0.3s;
+}
+
+.hotels__title a:hover,
+.hotels__title a:focus {
+  color: #81b3d2;
+}
+
+.hotels__title a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.hotels__type,
+.hotels__price {
+  color: #333333;
+  line-height: 21px;
+}
+
+.hotels__button {
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: inherit;
+  color: #ffffff;
+  
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hotels__button--more:hover,
+.hotels__button--more:focus {
+  background-color: #81b3d2;
+}
+
+.hotels__button--book:hover,
+.hotels__button--book:focus {
+  background-color: #766357;
+}
+
+.hotels__button:focus {
+  outline: none;
+}
+
+.hotels__button button:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hotels__button--more:active {
+  background-color: #5496bd;
+}
+
+.hotels__button--book:active {
+  background-color: #503e33;
+}
+
+.hotels__value {
+  color: #666666;
+  line-height: 21px;
+  
+  background-color: #f2f2f2;
+}
