@@ -7,15 +7,15 @@
   <link rel="stylesheet" type="text/css" href="./css/normalize.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body class="hotelsPage">
-  <header class="siteHeader">
-    <nav class="siteHeader__navigation">
-      <a class="siteHeader__logo" href="./index.html" aria-label="Логотип Седона"></a>
-      <ul class="siteHeader__menu">
-        <li><a href="">Информация</a></li>
-        <li><a href="">Фото и видео</a></li>
-        <li><a href="">Карта штата</a></li>
-        <li><a href="">Гостиницы</a></li>
+<body>
+  <header class="header">
+    <nav class="header__navigation">
+      <a class="header__logo" href="./index.html" aria-label="Логотип Седона"></a>
+      <ul class="header__menu">
+        <li><a class="header__menuLink" href="">Информация</a></li>
+        <li><a class="header__menuLink" href="">Фото и видео</a></li>
+        <li><a class="header__menuLink" href="">Карта штата</a></li>
+        <li><a class="header__menuLink" href="">Гостиницы</a></li>
       </ul>
     </nav>
   </header>
@@ -63,13 +63,11 @@
           <fieldset>
             <legend>Стоимость в сутки (Р):</legend>
             <p class="filtersHotels__sumShow">
-              <!-- Я правильно поняла? -->
               <label for="min-sum">От</label>
               <input id="min-sum" type="text" name="min-sum" placeholder="0">
               <label for="max-sum">До</label>
               <input id="max-sum" type="text" name="max-sum" placeholder="3000">
             </p>
-            <!-- Не знаю как разметить   эту  часть , круглые ползунки это  кнопки или span? -->
             <p class="filtersHotels__sumRange">
               <label class="visually-hidden" for="range">Диапазон сумм</label>
               <button class="filtersHotels__sumMin" type="button"></button>
@@ -94,109 +92,109 @@
         <li><a></a></li>
       </ul>
     </div>
-    <section class="hotels">
+    <section class="searchResults">
       <h2>Результаты поиска гостиниц Седоны</h2>
-      <ol class="hotels__list">
-        <li class="hotels__item">
-          <a class="hotels__img" href="">
+      <ol class="searchResults__list">
+        <li class="searchResults__item"> <!-- Можно ли здесь добавить  еще один класс как главный, например, hotelCard и уже внутринние  части  карточки  описывать  через этот   класс, например, не searchResults__img, а hotelCard__img? -->
+          <a class="searchResults__img" href="">
             <img src="./img/hotel-amara-resort-spa.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
           </a>
-          <div class="hotels__info">
-            <h3 class="hotels__title">
-              <a href="">Amara Resort & Spa</a>
+          <div class="searchResults__info">
+            <h3 class="searchResults__title">
+              <a class="searchResults__titleLink" href="">Amara Resort & Spa</a>
             </h3>
-            <div class="hotels__detail">
-              <p class="hotels__column">
-                <span class="hotels__type">Гостиница</span>
-                <a class="hotels__button hotels__button--more" href="">Подробнее</a>
+            <div class="searchResults__detail">
+              <p class="searchResults__column">
+                <span class="searchResults__type">Гостиница</span>
+                <a class="searchResults__button button button--blue" href="">Подробнее</a>
               </p>
-              <p class="hotels__column">
-                <span class="hotels__price">От 4000 Р.</span>
-                <a class="hotels__button hotels__button--book" href="">Забронировать</a>
+              <p class="searchResults__column">
+                <span class="searchResults__price">От 4000 Р.</span>
+                <a class="searchResults__button button button--brown" href="">Забронировать</a>
               </p>
             </div>
           </div>
-          <div class="hotels__rating">
-            <p class="hotels__stars">
+          <div class="searchResults__rating">
+            <p class="searchResults__stars">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </p>
-            <p class="hotels__value">Рейтинг: 8,5</p>
+            <p class="searchResults__value">Рейтинг: 8,5</p>
           </div>
         </li>
-        <li class="hotels__item">
-          <a class="hotels__img" href="">
+        <li class="searchResults__item">
+          <a class="searchResults__img" href="">
             <img src="./img/hotel-desert-quail-inn.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
           </a>
-          <div class="hotels__info">
-            <h3 class="hotels__title">
-              <a href="">Desert Quail Inn</a>
+          <div class="searchResults__info">
+            <h3 class="searchResults__title">
+              <a class="searchResults__titleLink" href="">Desert Quail Inn</a>
             </h3>
-            <div class="hotels__detail">
-              <p class="hotels__column">
-                <span class="hotels__type">Мотель</span>
-                <a class="hotels__button hotels__button--more" href="">Подробнее</a>
+            <div class="searchResults__detail">
+              <p class="searchResults__column">
+                <span class="searchResults__type">Мотель</span>
+                <a class="searchResults__button button button--blue" href="">Подробнее</a>
               </p>
-              <p class="hotels__column">
-                <span class="hotels__price">От 3000 Р.</span>
-                <a class="hotels__button hotels__button--book" href="">Забронировать</a>
+              <p class="searchResults__column">
+                <span class="searchResults__price">От 3000 Р.</span>
+                <a class="searchResults__button button button--brown" href="">Забронировать</a>
               </p>
             </div>
           </div>
-          <div class="hotels__rating">
-            <p class="hotels__stars">
+          <div class="searchResults__rating">
+            <p class="searchResults__stars">
               <span></span>
               <span></span>
               <span></span>
             </p>
-            <p class="hotels__value">Рейтинг: 8,9</p>
+            <p class="searchResults__value">Рейтинг: 8,9</p>
           </div>
         </li>
-        <li class="hotels__item">
-          <a class="hotels__img" href="">
+        <li class="searchResults__item">
+          <a class="searchResults__img" href="">
             <img src="./img/hotel-villas-poco-diablom.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablom">
           </a>
-          <div class="hotels__info">
-            <h3 class="hotels__title">
-              <a href="">Villas at Poco Diablo</a>
+          <div class="searchResults__info">
+            <h3 class="searchResults__title">
+              <a class="searchResults__titleLink" href="">Villas at Poco Diablo</a>
             </h3>
-            <div class="hotels__detail">
-              <p class="hotels__column">
-                <span class="hotels__type">Апартаменты</span>
-                <a class="hotels__button hotels__button--more" href="">Подробнее</a>
+            <div class="searchResults__detail">
+              <p class="searchResults__column">
+                <span class="searchResults__type">Апартаменты</span>
+                <a class="searchResults__button button button--blue" href="">Подробнее</a>
               </p>
-              <p class="hotels__column">
-                <span class="hotels__price">От 2000 Р.</span>
-                <a class="hotels__button hotels__button--book" href="">Забронировать</a>
+              <p class="searchResults__column">
+                <span class="searchResults__price">От 2000 Р.</span>
+                <a class="searchResults__button button button--brown" href="">Забронировать</a>
               </p>
             </div>
           </div>
-          <div class="hotels__rating">
-            <p class="hotels__stars">
+          <div class="searchResults__rating">
+            <p class="searchResults__stars">
               <span></span>
               <span></span>
             </p>
-            <p class="hotels__value">Рейтинг: 9,2</p>
+            <p class="searchResults__value">Рейтинг: 9,2</p>
           </div>
         </li>
       </ol>
     </section>
   </main>
-  <footer class="siteFooter">
-    <p class="siteFooter__contacts">
-      <a href="./index.html">#visitSEDONA</a>
-      <a href="">Тел: +7(495) 666-02-66</a>
+  <footer class="footer">
+    <p class="footer__contacts">
+      <a class="footer__contactsLink" href="./index.html">#visitSEDONA</a>
+      <a class="footer__contactsLink" href="">Тел: +7(495) 666-02-66</a>
     </p>
-    <ul class="siteFooter__social">
-      <li><a href="">Твиттер</a></li>
-      <li><a href="">Фейсбук</a></li>
-      <li><a href="">Ютуб</a></li>
+    <ul class="footer__socials">
+      <li><a class="footer__socialsLink" href="">Твиттер</a></li>
+      <li><a class="footer__socialsLink" href="">Фейсбук</a></li>
+      <li><a class="footer__socialsLink" href="">Ютуб</a></li>
     </ul>
-    <p class="siteFooter__dev">
-      <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Логотип html academy" target="_blank">Website by</a>
+    <p class="footer__dev">
+      <a class="footer__devLink" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Логотип html academy" target="_blank">Website by</a>
     </p>
   </footer>
 </body>

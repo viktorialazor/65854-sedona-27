@@ -7,15 +7,15 @@
   <link rel="stylesheet" type="text/css" href="./css/normalize.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body class="indexPage">
-  <header class="siteHeader">
-    <nav class="siteHeader__navigation">
-      <a class="siteHeader__logo" aria-label="Логотип Седона"></a>
-      <ul class="siteHeader__menu">
-        <li><a href="">Информация</a></li>
-        <li><a href="">Фото и видео</a></li>
-        <li><a href="">Карта штата</a></li>
-        <li><a href="./hotels.html">Гостиницы</a></li>
+<body>
+  <header class="header">
+    <nav class="header__navigation">
+      <a class="header__logo" aria-label="Логотип Седона"></a>
+      <ul class="header__menu">
+        <li><a class="header__menuLink" href="">Информация</a></li>
+        <li><a class="header__menuLink" href="">Фото и видео</a></li>
+        <li><a class="header__menuLink" href="">Карта штата</a></li>
+        <li><a class="header__menuLink" href="./hotels.html">Гостиницы</a></li>
       </ul>
     </nav>
   </header>
@@ -25,8 +25,8 @@
     </section>
     <section class="advantages">
       <div class="advantages__heading">
-        <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
-        <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+        <h1 class="advantages__title">Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
+        <p class="advantages__text">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
       </div>
       <ul class="advantages__list">
         <li class="advantages__item advantages__item--wide">
@@ -83,54 +83,54 @@
       </ul>
     </section>
     <section class="searchHotel">
-      <span>Заинтересовались?</span>
-      <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-      <button type="button">Поиск гостиницы в Седоне</button>
+      <span class="searchHotel__title">Заинтересовались?</span>
+      <p class="searchHotel__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      <button class="searchHotel__button button button--brown" type="button">Поиск гостиницы в Седоне</button>
     </section>
     <div class="searchHotelForm">
       <form action="https://echo.htmlacademy.ru" method="post">
         <p class="searchHotelForm__row">
-          <label for="arrival-date">Дата заезда:</label>
-          <input id="arrival-date" type="text" name="arrival-date" placeholder="24 апреля 2017">
+          <label class="searchHotelForm__label" for="arrival-date">Дата заезда:</label>
+          <input class="searchHotelForm__input" id="arrival-date" type="text" name="arrival-date" placeholder="24 апреля 2017">
         </p>
         <p class="searchHotelForm__row">
-          <label for="departure-date">Дата выезда:</label>
-          <input id="departure-date" type="text" name="departure-date" placeholder="4 июля 2017">
+          <label class="searchHotelForm__label" for="departure-date">Дата выезда:</label>
+          <input class="searchHotelForm__input" id="departure-date" type="text" name="departure-date" placeholder="4 июля 2017">
         </p>
         <p class="searchHotelForm__row">
           <p class="searchHotelForm__column">
-            <label for="adult">Взрослые:</label>
-            <span>
-              <button type="button" aria-label="Уменьшить"></button>
-              <input id="adult" type="number" name="adult" placeholder="2">
-              <button type="button" aria-label="Увеличить"></button>
+            <label class="searchHotelForm__label" for="adult">Взрослые:</label>
+            <span class="searchHotelForm__box">
+              <button class="searchHotelForm__button" type="button" aria-label="Уменьшить"></button>
+              <input class="searchHotelForm__input" id="adult" type="number" name="adult" placeholder="2">
+              <button class="searchHotelForm__button" type="button" aria-label="Увеличить"></button>
             </span>
           </p>
           <p class="searchHotelForm__column">
-            <label for="children">Дети:</label>
-            <span>
-              <button type="button" aria-label="Уменьшить"></button>
-              <input id="children" type="number" name="children" placeholder="0">
-              <button type="button" aria-label="Увеличить"></button>
+            <label class="searchHotelForm__label" for="children">Дети:</label>
+            <span class="searchHotelForm__box">
+              <button class="searchHotelForm__button" type="button" aria-label="Уменьшить"></button>
+              <input class="searchHotelForm__input" id="children" type="number" name="children" placeholder="0">
+              <button class="searchHotelForm__button" type="button" aria-label="Увеличить"></button>
             </span>
           </p>
         </p>
-        <button class="searchHotelForm__submit" type="submit">Найти</button>
+        <button class="searchHotelForm__submit button button--blue" type="submit">Найти</button>
       </form>
     </div>
   </main>
-  <footer class="siteFooter">
-    <p class="siteFooter__contacts">
-      <a href="./index.html">#visitSEDONA</a>
-      <a href="">Тел: +7(495) 666-02-66</a>
+  <footer class="footer">
+    <p class="footer__contacts">
+      <a class="footer__contactsLink" href="./index.html">#visitSEDONA</a>
+      <a class="footer__contactsLink" href="">Тел: +7(495) 666-02-66</a>
     </p>
-    <ul class="siteFooter__social">
-      <li><a href="">Твиттер</a></li>
-      <li><a href="">Фейсбук</a></li>
-      <li><a href="">Ютуб</a></li>
+    <ul class="footer__socials">
+      <li><a class="footer__socialsLink" href="">Твиттер</a></li>
+      <li><a class="footer__socialsLink" href="">Фейсбук</a></li>
+      <li><a class="footer__socialsLink" href="">Ютуб</a></li>
     </ul>
-    <p class="siteFooter__dev">
-      <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Логотип html academy" target="_blank">Website by</a>
+    <p class="footer__dev">
+      <a class="footer__devLink" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="Логотип html academy" target="_blank">Website by</a>
     </p>
   </footer>
 </body>
