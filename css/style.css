@@ -1,8 +1,3 @@
-/*
-1. Не поняла ту  часть,где  написано "избыточно", нужно убрать  комментарий  "Page Index" ?
-2. Нужно явно указать  и font-family и text-transform? А color тоже  лучше указывать  явно и значение "inherit" использовать  поменьше?
-3. Класс "hotelsPage" удалила, а если бы он был нужен, то  правильно назвать  "innerPage"?
- */
 html {
     box-sizing: border-box;
 }
@@ -257,44 +252,44 @@ a {
     list-style: none;
 }
 
-.searchResults__img {
+.hotelCard__img {
     background-color: #81b3d2;
 }
 
-.searchResults__title {
+.hotelCard__title {
     font-size: 21px;
     font-weight: 700;
     line-height: 26px;
 }
 
-.searchResults__titleLink {
+.hotelCard__titleLink {
     transition: color .3s;
 
     color: #000;
 }
 
-.searchResults__titleLink:hover,
-.searchResults__titleLink:focus {
+.hotelCard__titleLink:hover,
+.hotelCard__titleLink:focus {
     color: #81b3d2;
 }
 
-.searchResults__titleLink:active {
+.hotelCard__titleLink:active {
     color: rgba(0, 0, 0, .3);
 }
 
-.searchResults__type,
-.searchResults__price {
+.hotelCard__type,
+.hotelCard__price {
     line-height: 21px;
 
     color: #333;
 }
 
-.searchResults__button {
+.hotelCard__button {
     font-size: 21px;
     line-height: 26px;
 }
 
-.searchResults__value {
+.hotelCard__value {
     line-height: 21px;
 
     color: #666;
