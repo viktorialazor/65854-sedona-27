@@ -15,7 +15,7 @@
         <li><a class="header__menuLink" href="">Информация</a></li>
         <li><a class="header__menuLink" href="">Фото и видео</a></li>
         <li><a class="header__menuLink" href="">Карта штата</a></li>
-        <li><a class="header__menuLink" href="">Гостиницы</a></li>
+        <li><a class="header__menuLink header__menuLink--active" href="">Гостиницы</a></li>
       </ul>
     </nav>
   </header>
@@ -24,54 +24,54 @@
       <h2 class="visually-hidden">Фильтр гостиниц</h2>
       <form class="filtersHotels__form" action="https://echo.htmlacademy.ru" method="get">
         <div class="filtersHotels__column">
-          <fieldset>
-            <legend>Инфраструктура:</legend>
+          <fieldset class="filtersHotels__fieldset">
+            <legend class="filtersHotels__legend">Инфраструктура:</legend>
             <ul class="filtersHotels__list">
               <li class="filtersHotels__item">
-                <input id="pool" type="checkbox" name="pool" checked>
-                <label for="pool">Бассейн</label>
+                <input class="filtersHotels__checkbox" id="pool" type="checkbox" name="pool" checked>
+                <label class="filtersHotels__label" for="pool">Бассейн</label>
               </li>
               <li class="filtersHotels__item">
-                <input id="parking" type="checkbox" name="parking">
-                <label for="parking">Парковка</label>
+                <input class="filtersHotels__checkbox" id="parking" type="checkbox" name="parking">
+                <label class="filtersHotels__label" for="parking">Парковка</label>
               </li>
               <li class="filtersHotels__item">
-                <input id="wifi" type="checkbox" name="wifi">
-                <label for="wifi">Wi-Fi</label>
+                <input class="filtersHotels__checkbox" id="wifi" type="checkbox" name="wifi">
+                <label class="filtersHotels__label" for="wifi">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset>
-            <legend>Тип жилья:</legend>
+          <fieldset class="filtersHotels__fieldset">
+            <legend class="filtersHotels__legend">Тип жилья:</legend>
             <ul class="filtersHotels__list">
               <li class="filtersHotels__item">
-                <input id="hotel" type="checkbox" name="hotel" checked>
-                <label for="hotel">Гостиница</label>
+                <input class="filtersHotels__checkbox" id="hotel" type="checkbox" name="hotel" checked>
+                <label class="filtersHotels__label" for="hotel">Гостиница</label>
               </li>
               <li class="filtersHotels__item">
-                <input id="motel" type="checkbox" name="motel" checked>
-                <label for="motel">Мотель</label>
+                <input class="filtersHotels__checkbox" id="motel" type="checkbox" name="motel" checked>
+                <label class="filtersHotels__label" for="motel">Мотель</label>
               </li>
               <li class="filtersHotels__item">
-                <input id="apartment" type="checkbox" name="apartment" checked>
-                <label for="apartment">Апартаменты</label>
+                <input class="filtersHotels__checkbox" id="apartment" type="checkbox" name="apartment" checked>
+                <label class="filtersHotels__label" for="apartment">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
         </div>
         <div class="filtersHotels__column">
-          <fieldset>
-            <legend>Стоимость в сутки (Р):</legend>
+          <fieldset class="filtersHotels__fieldset">
+            <legend class="filtersHotels__legend">Стоимость в сутки (Р):</legend>
             <p class="filtersHotels__sumShow">
-              <label for="min-sum">От</label>
-              <input id="min-sum" type="text" name="min-sum" placeholder="0">
-              <label for="max-sum">До</label>
-              <input id="max-sum" type="text" name="max-sum" placeholder="3000">
+              <label class="filtersHotels__label" for="min-sum">От</label>
+              <input class="filtersHotels__input" id="min-sum" type="text" name="min-sum" placeholder="0">
+              <label class="filtersHotels__label" for="max-sum">До</label>
+              <input class="filtersHotels__input" id="max-sum" type="text" name="max-sum" placeholder="3000">
             </p>
             <p class="filtersHotels__sumRange">
               <label class="visually-hidden" for="range">Диапазон сумм</label>
               <button class="filtersHotels__sumMin" type="button"></button>
-              <input id="range" type="range" name="range">
+              <input class="filtersHotels__range" id="range" type="range" name="range">
               <button class="filtersHotels__sumMax" type="button"></button>
             </p>
           </fieldset>
@@ -80,16 +80,16 @@
       </form>
     </section>
     <div class="sortingHotels">
-      <span>Найдено: <small>3</small></span>
-      <span>Сортировка:</span>
+      <span class="sortingHotels__amount">Найдено: <small class="sortingHotels__number">3</small></span>
+      <span class="sortingHotels__title">Сортировка:</span>
       <ul class="sortingHotels__options">
-        <li><a>По цене</a></li>
-        <li><a href="">По типу</a></li>
-        <li><a href="">По рейтингу</a></li>
+        <li class="sortingHotels__optionsItem"><a class="sortingHotels__optionsName sortingHotels__optionsName--active">По цене</a></li>
+        <li class="sortingHotels__optionsItem"><a class="sortingHotels__optionsName" href="">По типу</a></li>
+        <li class="sortingHotels__optionsItem"><a class="sortingHotels__optionsName" href="">По рейтингу</a></li>
       </ul>
       <ul class="sortingHotels__grade">
-        <li><a href=""></a></li>
-        <li><a></a></li>
+        <li class="sortingHotels__gradeItem"><a  class="sortingHotels__gradeArrow" href=""></a></li>
+        <li class="sortingHotels__gradeItem"><a class="sortingHotels__gradeArrow"></a></li>
       </ul>
     </div>
     <section class="searchResults">

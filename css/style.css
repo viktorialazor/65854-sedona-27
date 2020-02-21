@@ -106,6 +106,10 @@ a {
     color: rgba(0, 0, 0, .3);
 }
 
+.header__menuLink--active {
+    color: #766357;
+}
+
 /* Main */
 
 /* Banner */
@@ -122,10 +126,49 @@ a {
     line-height: 26px;
 }
 
-.advantages__text {
+.advantages__subtitle {
     line-height: 26px;
 
     color: #333;
+}
+
+.advantages__list {
+    list-style: none;
+    text-align: center;
+}
+
+.advantages__card {
+    background-color: #eeeeee;
+}
+
+.advantages__card--invert {
+    background-color: #81b3d2;
+}
+
+.advantages__caption {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 21;
+}
+
+.advantages__card--invert .advantages__caption,
+.advantages__card--invert .advantages__number,
+.advantages__card--invert .advantages__text {
+    color: #ffffff;
+}
+
+.advantages__text {
+    color: #333333;
+    line-height: 21px;
+}
+
+.advantages__additional {
+    list-style: none;
+    text-align: center;
+}
+
+.advantages__additionalItem {
+    
 }
 
 /* Search hotel */
@@ -246,8 +289,106 @@ a {
 
 /* Page Inner */
 
-/* Hotels */
+/* Filters hotels */
 
+.filtersHotels {
+    background-color: #4a769a;
+    background-image: url('../img/filter-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1200px 220px;
+}
+
+.filtersHotels__legend {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+
+    color: #fff;
+}
+
+.filtersHotels__list {
+    list-style: none;
+}
+
+.filtersHotels__label {
+    line-height: 21px;
+
+    color: #fff;
+}
+
+.filtersHotels__input {
+    line-height: 21px;
+
+    color: #fff;
+}
+
+.filtersHotels__submit {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-weight: 700;
+    line-height: 21px;
+
+    transition: color 0.3s, background-color 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent;
+}
+
+.filtersHotels__submit:hover,
+.filtersHotels__submit:focus {
+    color: #000;
+    background-color: #fff;
+}
+
+.filtersHotels__submit:focus {
+    outline: none;
+}
+
+/* Sorting hotels */
+
+.sortingHotels__amount,
+.sortingHotels__number {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.sortingHotels__title {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.sortingHotels__options {
+    list-style: none;
+}
+
+.sortingHotels__optionsName {
+    font-size: 12px;
+    line-height: 18px;
+
+    transition: color .3s;
+
+    color: rgba(0, 0, 0, .3);
+}
+
+.sortingHotels__optionsName:hover,
+.sortingHotels__optionsName:focus,
+.sortingHotels__optionsName--active {
+    color: #81b3d2;
+}
+
+.sortingHotels__optionsName:active {
+    color: #000;
+}
+
+.sortingHotels__grade {
+    list-style: none;
+}
+
+/* Search results */
 .searchResults__list {
     list-style: none;
 }
