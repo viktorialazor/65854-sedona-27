@@ -19,8 +19,8 @@ body {
 
     text-transform: uppercase;
 
-    color: #000;
-    background-color: #fff;
+    color: #000000;
+    background-color: #ffffff;
 }
 
 img {
@@ -40,7 +40,7 @@ a {
     vertical-align: middle;
     text-transform: uppercase;
 
-    color: #fff;
+    color: #ffffff;
     border: none;
 }
 
@@ -90,7 +90,7 @@ a {
 
     transition: color .3s;
 
-    color: #000;
+    color: #000000;
 }
 
 .header__menuLink:hover,
@@ -129,7 +129,7 @@ a {
 .advantages__subtitle {
     line-height: 26px;
 
-    color: #333;
+    color: #333333;
 }
 
 .advantages__list {
@@ -142,19 +142,20 @@ a {
 }
 
 .advantages__card--invert {
+    color: #ffffff;
     background-color: #81b3d2;
 }
 
 .advantages__caption {
     font-size: 21px;
     font-weight: 700;
-    line-height: 21;
+    line-height: 21px;
 }
 
 .advantages__card--invert .advantages__caption,
 .advantages__card--invert .advantages__number,
 .advantages__card--invert .advantages__text {
-    color: #ffffff;
+    color: inherit;
 }
 
 .advantages__text {
@@ -165,10 +166,6 @@ a {
 .advantages__additional {
     list-style: none;
     text-align: center;
-}
-
-.advantages__additionalItem {
-    
 }
 
 /* Search hotel */
@@ -182,7 +179,7 @@ a {
 .searchHotel__text {
     line-height: 24px;
 
-    color: #333;
+    color: #333333;
 }
 
 .searchHotel__button {
@@ -211,7 +208,7 @@ a {
 .searchHotelForm__input:focus {
     border-color: #e5e5e5;
     outline: none;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .searchHotelForm__input::-webkit-input-placeholder {
@@ -220,7 +217,7 @@ a {
 
     text-transform: uppercase;
 
-    color: #000;
+    color: #000000;
 }
 
 .searchHotelForm__input:-ms-input-placeholder {
@@ -229,7 +226,7 @@ a {
 
     text-transform: uppercase;
 
-    color: #000;
+    color: #000000;
 }
 
 .searchHotelForm__input::-ms-input-placeholder {
@@ -238,7 +235,7 @@ a {
 
     text-transform: uppercase;
 
-    color: #000;
+    color: #000000;
 }
 
 .searchHotelForm__input::placeholder {
@@ -247,7 +244,7 @@ a {
 
     text-transform: uppercase;
 
-    color: #000;
+    color: #000000;
 }
 
 .searchHotelForm__submit {
@@ -267,7 +264,7 @@ a {
 .footer__contactsLink {
     transition: color .3s;
 
-    color: #000;
+    color: #000000;
 }
 
 .footer__contactsLink:hover,
@@ -284,7 +281,7 @@ a {
 }
 
 .footer__devLink {
-    color: #000;
+    color: #000000;
 }
 
 /* Page Inner */
@@ -292,10 +289,7 @@ a {
 /* Filters hotels */
 
 .filtersHotels {
-    background-color: #4a769a;
-    background-image: url('../img/filter-background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: #4a769a url('../img/filter-background.jpg') no-repeat center;
     background-size: 1200px 220px;
 }
 
@@ -304,7 +298,7 @@ a {
     font-weight: 700;
     line-height: 21px;
 
-    color: #fff;
+    color: #ffffff;
 }
 
 .filtersHotels__list {
@@ -314,13 +308,13 @@ a {
 .filtersHotels__label {
     line-height: 21px;
 
-    color: #fff;
+    color: #ffffff;
 }
 
 .filtersHotels__input {
     line-height: 21px;
 
-    color: #fff;
+    color: #ffffff;
 }
 
 .filtersHotels__submit {
@@ -333,15 +327,15 @@ a {
     vertical-align: middle;
     text-transform: uppercase;
 
-    color: #fff;
-    border: 2px solid #fff;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     background-color: transparent;
 }
 
 .filtersHotels__submit:hover,
 .filtersHotels__submit:focus {
-    color: #000;
-    background-color: #fff;
+    color: #000000;
+    background-color: #ffffff;
 }
 
 .filtersHotels__submit:focus {
@@ -381,7 +375,7 @@ a {
 }
 
 .sortingHotels__optionsName:active {
-    color: #000;
+    color: #000000;
 }
 
 .sortingHotels__grade {
@@ -406,7 +400,7 @@ a {
 .hotelCard__titleLink {
     transition: color .3s;
 
-    color: #000;
+    color: #000000;
 }
 
 .hotelCard__titleLink:hover,
@@ -422,7 +416,7 @@ a {
 .hotelCard__price {
     line-height: 21px;
 
-    color: #333;
+    color: #333333;
 }
 
 .hotelCard__button {
@@ -433,6 +427,6 @@ a {
 .hotelCard__value {
     line-height: 21px;
 
-    color: #666;
+    color: #666666;
     background-color: #f2f2f2;
 }
