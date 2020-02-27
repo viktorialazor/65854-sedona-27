@@ -11,15 +11,17 @@
   <header class="header">
     <nav class="header__navigation">
       <a class="header__logo" href="./index.html" aria-label="Логотип Седона"></a>
-      <ul class="header__menu">
-        <li><a class="header__menuLink" href="">Информация</a></li>
-        <li><a class="header__menuLink" href="">Фото и видео</a></li>
-        <li><a class="header__menuLink" href="">Карта штата</a></li>
-        <li><a class="header__menuLink header__menuLink--active" href="">Гостиницы</a></li>
-      </ul>
+      <div class="container">
+        <ul class="header__menu">
+          <li class="header__menuItem"><a class="header__menuLink" href="./index.html">Информация</a></li>
+          <li class="header__menuItem"><a class="header__menuLink" href="">Фото и видео</a></li>
+          <li class="header__menuItem"><a class="header__menuLink" href="">Карта штата</a></li>
+          <li class="header__menuItem"><a class="header__menuLink header__menuLink--active" href="">Гостиницы</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
-  <main>
+  <main class="container">
     <section class="filtersHotels">
       <h2 class="visually-hidden">Фильтр гостиниц</h2>
       <form class="filtersHotels__form" action="https://echo.htmlacademy.ru" method="get">
@@ -93,11 +95,11 @@
       </ul>
     </div>
     <section class="searchResults">
-      <h2>Результаты поиска гостиниц Седоны</h2>
+      <h2 class="visually-hidden">Результаты поиска гостиниц Седоны</h2>
       <ol class="searchResults__list">
         <li class="searchResults__item hotelCard">
-          <a class="hotelCard__img" href="">
-            <img src="./img/hotel-amara-resort-spa.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
+          <a class="hotelCard__imgLink" href="">
+            <img class="hotelCard__img" src="./img/hotel-amara-resort-spa.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
           </a>
           <div class="hotelCard__info">
             <h3 class="hotelCard__title">
@@ -126,8 +128,8 @@
           </div>
         </li>
         <li class="searchResults__item hotelCard">
-          <a class="hotelCard__img" href="">
-            <img src="./img/hotel-desert-quail-inn.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
+          <a class="hotelCard__imgLink" href="">
+            <img class="hotelCard__img" src="./img/hotel-desert-quail-inn.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
           </a>
           <div class="hotelCard__info">
             <h3 class="hotelCard__title">
@@ -154,8 +156,8 @@
           </div>
         </li>
         <li class="searchResults__item hotelCard">
-          <a class="hotelCard__img" href="">
-            <img src="./img/hotel-villas-poco-diablom.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablom">
+          <a class="hotelCard__imgLink" href="">
+            <img class="hotelCard__img" src="./img/hotel-villas-poco-diablom.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablom">
           </a>
           <div class="hotelCard__info">
             <h3 class="hotelCard__title">

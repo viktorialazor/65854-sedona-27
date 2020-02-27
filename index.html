@@ -11,17 +11,20 @@
   <header class="header">
     <nav class="header__navigation">
       <a class="header__logo" aria-label="Логотип Седона"></a>
-      <ul class="header__menu">
-        <li><a class="header__menuLink header__menuLink--active" href="">Информация</a></li>
-        <li><a class="header__menuLink" href="">Фото и видео</a></li>
-        <li><a class="header__menuLink" href="">Карта штата</a></li>
-        <li><a class="header__menuLink" href="./hotels.html">Гостиницы</a></li>
-      </ul>
+      <!-- В "container" нужно оборачивать  только  "header__menu" или "header__navigation"? -->
+      <div class="container">
+        <ul class="header__menu">
+          <li class="header__menuItem"><a class="header__menuLink header__menuLink--active" href="">Информация</a></li>
+          <li class="header__menuItem"><a class="header__menuLink" href="">Фото и видео</a></li>
+          <li class="header__menuItem"><a class="header__menuLink" href="">Карта штата</a></li>
+          <li class="header__menuItem"><a class="header__menuLink" href="./hotels.html">Гостиницы</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
-  <main>
+  <main class="container">
     <section class="banner">
-      <img src="./img/banner-index.png" width="1200" height="510" alt="Скалы Седоны">
+      <img class="banner__img" src="./img/banner-index.jpg" width="1200" height="510" alt="Скалы Седоны">
     </section>
     <section class="advantages">
       <div class="advantages__heading">
@@ -84,25 +87,27 @@
     </section>
     <section class="searchHotel">
       <span class="searchHotel__title">Заинтересовались?</span>
-      <p class="searchHotel__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      <p class="searchHotel__text">Укажите предполагаемые даты поездки, <br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
       <button class="searchHotel__button button button--brown" type="button">Поиск гостиницы в Седоне</button>
     </section>
-    <div class="searchHotelForm">
-      <form action="https://echo.htmlacademy.ru" method="post">
-        <p class="searchHotelForm__row">
+    <!-- Поменяла класс у обертки и добавила два класса форме, потому  что  у тега  form не было класса-->
+    <div class="searchHotelRequest">
+      <form class="searchHotelRequest__form searchHotelForm" action="https://echo.htmlacademy.ru" method="post">
+        <div class="searchHotelForm__row">
           <label class="searchHotelForm__label" for="arrival-date">Дата заезда:</label>
           <input class="searchHotelForm__input" id="arrival-date" type="text" name="arrival-date" placeholder="24 апреля 2017">
-        </p>
-        <p class="searchHotelForm__row">
+        </div>
+        <div class="searchHotelForm__row">
           <label class="searchHotelForm__label" for="departure-date">Дата выезда:</label>
           <input class="searchHotelForm__input" id="departure-date" type="text" name="departure-date" placeholder="4 июля 2017">
-        </p>
-        <p class="searchHotelForm__row">
+        </div>
+        <div class="searchHotelForm__row">
           <p class="searchHotelForm__column">
             <label class="searchHotelForm__label" for="adult">Взрослые:</label>
             <span class="searchHotelForm__box">
               <button class="searchHotelForm__button" type="button" aria-label="Уменьшить"></button>
-              <input class="searchHotelForm__input" id="adult" type="number" name="adult" placeholder="2">
+              <!-- На макете  цифры увеличения и уменьшения количества  человек выровнены по центру,  при input type="number" выровнять  по центру  текст   не получается  (мешают  стрелочки) , поэтому  я поменяла type на "text"-->
+              <input class="searchHotelForm__number" id="adult" type="text" name="adult" placeholder="2">
               <button class="searchHotelForm__button" type="button" aria-label="Увеличить"></button>
             </span>
           </p>
@@ -110,11 +115,11 @@
             <label class="searchHotelForm__label" for="children">Дети:</label>
             <span class="searchHotelForm__box">
               <button class="searchHotelForm__button" type="button" aria-label="Уменьшить"></button>
-              <input class="searchHotelForm__input" id="children" type="number" name="children" placeholder="0">
+              <input class="searchHotelForm__number" id="children" type="text" name="children" placeholder="0">
               <button class="searchHotelForm__button" type="button" aria-label="Увеличить"></button>
             </span>
           </p>
-        </p>
+        </div>
         <button class="searchHotelForm__submit button button--blue" type="submit">Найти</button>
       </form>
     </div>
