@@ -7,22 +7,19 @@
   <link rel="stylesheet" type="text/css" href="./css/normalize.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body>
+<body class="container">
   <header class="header">
     <nav class="header__navigation">
       <a class="header__logo" aria-label="Логотип Седона"></a>
-      <!-- В "container" нужно оборачивать  только  "header__menu" или "header__navigation"? -->
-      <div class="container">
-        <ul class="header__menu">
-          <li class="header__menuItem"><a class="header__menuLink header__menuLink--active" href="">Информация</a></li>
-          <li class="header__menuItem"><a class="header__menuLink" href="">Фото и видео</a></li>
-          <li class="header__menuItem"><a class="header__menuLink" href="">Карта штата</a></li>
-          <li class="header__menuItem"><a class="header__menuLink" href="./hotels.html">Гостиницы</a></li>
-        </ul>
-      </div>
+      <ul class="header__menu">
+        <li class="header__menuItem"><a class="header__menuLink header__menuLink--active" href="">Информация</a></li>
+        <li class="header__menuItem"><a class="header__menuLink" href="">Фото и видео</a></li>
+        <li class="header__menuItem"><a class="header__menuLink" href="">Карта штата</a></li>
+        <li class="header__menuItem"><a class="header__menuLink" href="./hotels.html">Гостиницы</a></li>
+      </ul>
     </nav>
   </header>
-  <main class="container">
+  <main>
     <section class="banner">
       <img class="banner__img" src="./img/banner-index.jpg" width="1200" height="510" alt="Скалы Седоны">
     </section>
