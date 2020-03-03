@@ -273,9 +273,6 @@ a {
     line-height: 36px;
 
     display: block;
-
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .searchHotel__text {
@@ -303,7 +300,6 @@ a {
     margin: 0 auto;
     padding: 55px;
 
-    background-color: #ffffff;
     box-shadow: 0 7px 15px rgba(0, 1, 1, .15);}
 
 .searchHotelForm__row {
@@ -400,8 +396,8 @@ a {
     margin-top: 0;
     margin-bottom: 0;
 
-    justify-content: flex-end;
     align-items: center;
+    justify-content: space-between;
 }
 
 .searchHotelForm__column:first-child {
@@ -409,11 +405,7 @@ a {
 }
 
 .searchHotelForm__column:last-child {
-    flex-basis: calc(100% - 276px);
-}
-
-.searchHotelForm__column .searchHotelForm__label {
-    margin-right: auto;
+    flex-basis: 179px;
 }
 
 .searchHotelForm__box {
@@ -604,8 +596,6 @@ a {
 .searchResults {
     padding-right: 72px;
     padding-left: 72px;
-
-    background-color: #ffffff;
 }
 
 .searchResults__list {
@@ -633,29 +623,10 @@ a {
 
 .hotelCard__imgLink {
     margin-right: 30px;
-
-    text-decoration: none;
-
-    background-color: #81b3d2;
 }
 
 .hotelCard__img {
     display: block;
-}
-
-.hotelCard__detail {
-    display: flex;
-}
-
-.hotelCard__column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start; /**/
-}
-
-.hotelCard__column:first-child {
-    margin-right: 6px;
 }
 
 .hotelCard__title {
@@ -681,9 +652,23 @@ a {
     color: rgba(0, 0, 0, .3);
 }
 
+.hotelCard__detail {
+    display: flex;
+}
+
 .hotelCard__column {
+    display: flex;
+    flex-direction: column;
+
     margin-top: 0;
     margin-bottom: 0;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.hotelCard__column:first-child {
+    margin-right: 6px;
 }
 
 .hotelCard__type,
@@ -708,7 +693,6 @@ a {
 
     margin-left: auto;
 
-    justify-content: stretch;
     align-self: flex-end;
 }
 
