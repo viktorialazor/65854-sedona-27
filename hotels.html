@@ -59,21 +59,26 @@
             </ul>
           </fieldset>
         </div>
-        <div class="filtersHotels__column">
+        <div class="filtersHotels__column filtersHotels__column--wide">
           <fieldset class="filtersHotels__fieldset">
             <legend class="filtersHotels__legend">Стоимость в сутки (Р):</legend>
-            <p class="filtersHotels__sumShow">
-              <label class="filtersHotels__label" for="min-sum">От</label>
-              <input class="filtersHotels__input" id="min-sum" type="text" name="min-sum" placeholder="0">
-              <label class="filtersHotels__label" for="max-sum">До</label>
-              <input class="filtersHotels__input" id="max-sum" type="text" name="max-sum" placeholder="3000">
-            </p>
-            <p class="filtersHotels__sumRange">
+            <div class="filtersHotels__sumShow">
+              <!-- Добавила обертку .filtersHotels__sumShowWrapper для стилизации -->
+              <p class="filtersHotels__sumShowWrapper">
+                <label class="filtersHotels__label" for="min-sum">От</label>
+                <input class="filtersHotels__input" id="min-sum" type="text" name="min-sum" placeholder="0">
+              </p>
+              <p class="filtersHotels__sumShowWrapper">
+                <label class="filtersHotels__label" for="max-sum">До</label>
+                <input class="filtersHotels__input" id="max-sum" type="text" name="max-sum" placeholder="3000">
+              </p>
+            </div>
+            <div class="filtersHotels__sumRange">
               <label class="visually-hidden" for="range">Диапазон сумм</label>
               <button class="filtersHotels__sumMin" type="button"></button>
               <input class="filtersHotels__range" id="range" type="range" name="range">
               <button class="filtersHotels__sumMax" type="button"></button>
-            </p>
+            </div>
           </fieldset>
           <button class="filtersHotels__submit" type="submit">Показать</button>
         </div>
