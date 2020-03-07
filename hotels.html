@@ -23,65 +23,60 @@
     <section class="filtersHotels">
       <h2 class="visually-hidden">Фильтр гостиниц</h2>
       <form class="filtersHotels__form" action="https://echo.htmlacademy.ru" method="get">
-        <div class="filtersHotels__column">
-          <fieldset class="filtersHotels__fieldset">
-            <legend class="filtersHotels__legend">Инфраструктура:</legend>
-            <ul class="filtersHotels__list">
-              <li class="filtersHotels__item">
-                <input class="filtersHotels__checkbox" id="pool" type="checkbox" name="pool" checked>
-                <label class="filtersHotels__label" for="pool">Бассейн</label>
-              </li>
-              <li class="filtersHotels__item">
-                <input class="filtersHotels__checkbox" id="parking" type="checkbox" name="parking">
-                <label class="filtersHotels__label" for="parking">Парковка</label>
-              </li>
-              <li class="filtersHotels__item">
-                <input class="filtersHotels__checkbox" id="wifi" type="checkbox" name="wifi">
-                <label class="filtersHotels__label" for="wifi">Wi-Fi</label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="filtersHotels__fieldset">
-            <legend class="filtersHotels__legend">Тип жилья:</legend>
-            <ul class="filtersHotels__list">
-              <li class="filtersHotels__item">
-                <input class="filtersHotels__checkbox" id="hotel" type="checkbox" name="hotel" checked>
-                <label class="filtersHotels__label" for="hotel">Гостиница</label>
-              </li>
-              <li class="filtersHotels__item">
-                <input class="filtersHotels__checkbox" id="motel" type="checkbox" name="motel" checked>
-                <label class="filtersHotels__label" for="motel">Мотель</label>
-              </li>
-              <li class="filtersHotels__item">
-                <input class="filtersHotels__checkbox" id="apartment" type="checkbox" name="apartment" checked>
-                <label class="filtersHotels__label" for="apartment">Апартаменты</label>
-              </li>
-            </ul>
-          </fieldset>
-        </div>
-        <div class="filtersHotels__column filtersHotels__column--wide">
-          <fieldset class="filtersHotels__fieldset">
-            <legend class="filtersHotels__legend">Стоимость в сутки (Р):</legend>
-            <div class="filtersHotels__sumShow">
-              <!-- Добавила обертку .filtersHotels__sumShowWrapper для стилизации -->
-              <p class="filtersHotels__sumShowWrapper">
-                <label class="filtersHotels__label" for="min-sum">От</label>
-                <input class="filtersHotels__input" id="min-sum" type="text" name="min-sum" placeholder="0">
-              </p>
-              <p class="filtersHotels__sumShowWrapper">
-                <label class="filtersHotels__label" for="max-sum">До</label>
-                <input class="filtersHotels__input" id="max-sum" type="text" name="max-sum" placeholder="3000">
-              </p>
-            </div>
-            <div class="filtersHotels__sumRange">
-              <label class="visually-hidden" for="range">Диапазон сумм</label>
-              <button class="filtersHotels__sumMin" type="button"></button>
-              <input class="filtersHotels__range" id="range" type="range" name="range">
-              <button class="filtersHotels__sumMax" type="button"></button>
-            </div>
-          </fieldset>
-          <button class="filtersHotels__submit" type="submit">Показать</button>
-        </div>
+        <fieldset class="filtersHotels__fieldset">
+          <legend class="filtersHotels__legend">Инфраструктура:</legend>
+          <ul class="filtersHotels__list">
+            <li class="filtersHotels__item">
+              <input class="filtersHotels__checkbox" id="pool" type="checkbox" name="pool" checked>
+              <label class="filtersHotels__label" for="pool">Бассейн</label>
+            </li>
+            <li class="filtersHotels__item">
+              <input class="filtersHotels__checkbox" id="parking" type="checkbox" name="parking">
+              <label class="filtersHotels__label" for="parking">Парковка</label>
+            </li>
+            <li class="filtersHotels__item">
+              <input class="filtersHotels__checkbox" id="wifi" type="checkbox" name="wifi">
+              <label class="filtersHotels__label" for="wifi">Wi-Fi</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="filtersHotels__fieldset">
+          <legend class="filtersHotels__legend">Тип жилья:</legend>
+          <ul class="filtersHotels__list">
+            <li class="filtersHotels__item">
+              <input class="filtersHotels__checkbox" id="hotel" type="checkbox" name="hotel" checked>
+              <label class="filtersHotels__label" for="hotel">Гостиница</label>
+            </li>
+            <li class="filtersHotels__item">
+              <input class="filtersHotels__checkbox" id="motel" type="checkbox" name="motel" checked>
+              <label class="filtersHotels__label" for="motel">Мотель</label>
+            </li>
+            <li class="filtersHotels__item">
+              <input class="filtersHotels__checkbox" id="apartment" type="checkbox" name="apartment" checked>
+              <label class="filtersHotels__label" for="apartment">Апартаменты</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="filtersHotels__fieldset">
+          <legend class="filtersHotels__legend">Стоимость в сутки (Р):</legend>
+          <div class="filtersHotels__sumShow">
+            <p class="filtersHotels__sumShowWrapper">
+              <label class="filtersHotels__label" for="min-sum">От</label>
+              <input class="filtersHotels__input" id="min-sum" type="text" name="min-sum" placeholder="0">
+            </p>
+            <p class="filtersHotels__sumShowWrapper">
+              <label class="filtersHotels__label" for="max-sum">До</label>
+              <input class="filtersHotels__input" id="max-sum" type="text" name="max-sum" placeholder="3000">
+            </p>
+          </div>
+          <div class="filtersHotels__sumRange">
+            <label class="visually-hidden" for="range">Диапазон сумм</label>
+            <button class="filtersHotels__sumMin" type="button"></button>
+            <input class="filtersHotels__range" id="range" type="range" name="range">
+            <button class="filtersHotels__sumMax" type="button"></button>
+          </div>
+          <button class="filtersHotels__submit button button--white" type="submit">Показать</button>
+        </fieldset>
       </form>
     </section>
     <div class="sortingHotels">
