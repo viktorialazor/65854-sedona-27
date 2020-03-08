@@ -118,13 +118,13 @@ a {
 .header__logo {
     position: absolute;
     top: 0;
-    left: calc(50% - 70px);
+    left: calc(50% - 69px);
 
-    width: 140px;
-    height: 72px;
-
-     /* Временно */
-    background-color: lightgrey;
+    width: 138px;
+    height: 70px;
+    
+    background: url('../img/logo-sedona.svg') no-repeat center;
+    background-size: 138px 70px;
 }
 
 .header__menu {
@@ -281,6 +281,11 @@ a {
 
     margin-top: 0;
     margin-bottom: 20px;
+    color: #333333;
+}
+
+.advantages__card--invert .advantages__caption {
+    color: inherit;
 }
 
 .advantages__number {
@@ -292,13 +297,10 @@ a {
 
     margin-top: 0;
     margin-bottom: 0;
-
-    color: #333333;
 }
 
-.advantages__card .advantages__caption,
-.advantages__card .advantages__number,
-.advantages__card .advantages__text {
+.advantages__number,
+.advantages__text {
     color: inherit;
 }
 
@@ -398,6 +400,22 @@ a {
     background-color: #f2f2f2;
 }
 
+.searchHotelForm__input--date {
+    transition: background-image .3s;
+
+    background-image: url('../img/calendar-icon.svg');
+    background-repeat: no-repeat;
+    background-position: 312px center;
+}
+
+.searchHotelForm__input--date:hover {
+    background-image: url("../img/calendar-hover-icon.svg");
+}
+
+.searchHotelForm__input--date:focus {
+    background-image: url("../img/calendar-focus-icon.svg");
+}
+
 .searchHotelForm__input {
     width: 346px;
     padding-right: 12px;
@@ -406,6 +424,8 @@ a {
 
 .searchHotelForm__number {
     width: 38px;
+    margin-right: 1px;
+    margin-left: 1px;
 
     text-align: center;
 }
@@ -493,8 +513,41 @@ a {
 
     border: none;
     background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center;
 
     appearance: none;
+    transition: background-image .3s;
+}
+
+.searchHotelForm__button:focus {
+    outline: none;
+}
+
+.searchHotelForm__button--minus {
+    background-image: url('../img/minus-icon.svg');
+}
+
+.searchHotelForm__button--minus:hover,
+.searchHotelForm__button--minus:focus {
+    background-image: url("../img/minus-hover-icon.svg");
+}
+
+.searchHotelForm__button--minus:active {
+    background-image: url("../img/minus-focus-icon.svg");
+}
+
+.searchHotelForm__button--plus {
+    background-image: url('../img/plus-icon.svg');
+}
+
+.searchHotelForm__button--plus:hover,
+.searchHotelForm__button--plus:focus {
+    background-image: url("../img/plus-hover-icon.svg");
+}
+
+.searchHotelForm__button--plus:active {
+    background-image: url("../img/plus-focus-icon.svg");
 }
 
 .searchHotelForm__submit {
@@ -550,20 +603,114 @@ a {
 }
 
 .footer__socials {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     padding-left: 0;
 
     list-style: none;
 }
 
-.footer__dev {
-    line-height: 26px;
+.footer__socialsLink {
+    position: relative;
 
-    margin-left: auto;
+    display: block;
+
+    width: 46px;
+    height: 48px;
+    margin-right: 3px;
+    margin-left: 3px;
+
+    transition: background-color .3s;
+
+    background-color: #81b3d2;
+}
+
+/* Сначала я сделала иконки через background-image для "a", но оказалось, что  при клике у иконки opacity 0.3, поэтому  я переделала через before */
+
+.footer__socialsLink::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    content: '';
+    transition: opacity .3s;
+    transform: translate(-50%, -50%);
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer__socialsLink--tw::before {
+    width: 17px;
+    height: 15px;
+
+    background-image: url('../img/twitter-icon.svg');
+    background-size: 17px 15px;
+}
+
+.footer__socialsLink--fb::before {
+    width: 12px;
+    height: 22px;
+
+    background-image: url('../img/facebook-icon.svg');
+    background-size: 12px 22px;
+}
+
+.footer__socialsLink--yt::before {
+    width: 20px;
+    height: 16px;
+
+    background-image: url('../img/youtube-icon.svg');
+    background-size: 20px 16px;
+}
+
+.footer__socialsLink:hover,
+.footer__socialsLink:focus {
+    background-color: #669ec0;
+}
+
+.footer__socialsLink:active {
+    background-color: #5496bd;
+}
+
+.footer__socialsLink:active::before {
+    opacity: .3;
 }
 
 .footer__devLink {
+    line-height: 26px;
+
+    display: flex;
+
+    margin-left: auto;
+
     color: #000000;
+
+    align-items: center;
+}
+
+.footer__devText {
+    padding-right: 8px;
+}
+
+.footer__devPath {
+    transition: fill .3s;
+}
+
+.footer__devLink:hover .footer__devPath,
+.footer__devLink:focus .footer__devPath {
+    fill: #81b3d2;
+}
+
+.footer__devLink:focus {
+    outline: none;
+}
+
+.footer__devLink:active .footer__devPath {
+    fill: #bdbbbc;
 }
 
 /* Page Inner */
@@ -904,7 +1051,28 @@ a {
 
     margin-left: auto;
 
-    align-self: flex-end;
+    align-self: stretch;
+}
+
+.hotelCard__stars {
+    display: flex;
+
+    margin-top: 0;
+    margin-bottom: auto;
+
+    justify-content: flex-end;
+}
+
+.hotelCard__star {
+    width: 18px;
+    height: 17px;
+
+    background: url('../img/star-icon.svg') no-repeat center;
+    background-size: 18px 17px;
+}
+
+.hotelCard__star + .hotelCard__star {
+    margin-left: 5px;
 }
 
 .hotelCard__value {
