@@ -256,6 +256,8 @@ a {
     flex-basis: calc(100% - 800px);
 }
 
+/*В обычных карточках  цвет  по умолчанию #000000, который задан body, поэтому  этим  карточкам   цвет  не указан. Но цвет  заголовков caption в обычных карточках  #333333. И когда я карточкам  с белым текстом   указала цвет  #ffffff, то  caption в этих  карточках  остался  с цветом  #333333, поэтому  я ему указала inherit. Не пойму как мне нужно сделать  по-другому.*/
+
 .advantages__card {
     display: flex;
     flex-direction: column;
@@ -377,6 +379,8 @@ a {
     box-shadow: 0 7px 15px rgba(0, 1, 1, .15);}
 
 .searchHotelForm__row {
+    position: relative;
+
     display: flex;
 
     margin-bottom: 30px;
@@ -400,26 +404,21 @@ a {
     background-color: #f2f2f2;
 }
 
-.searchHotelForm__input--date {
-    transition: background-image .3s;
-
-    background-image: url('../img/calendar-icon.svg');
-    background-repeat: no-repeat;
-    background-position: 312px center;
-}
-
-.searchHotelForm__input--date:hover {
-    background-image: url("../img/calendar-hover-icon.svg");
-}
-
-.searchHotelForm__input--date:focus {
-    background-image: url("../img/calendar-focus-icon.svg");
-}
-
 .searchHotelForm__input {
     width: 346px;
     padding-right: 12px;
     padding-left: 12px;
+}
+
+.searchHotelForm__calendarIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    transition: color .3s;
+    transform: translateY(-50%);
+
+    color: #cacaca;
 }
 
 .searchHotelForm__number {
@@ -440,6 +439,14 @@ a {
     border-color: #e5e5e5;
     outline: none;
     background-color: #ffffff;
+}
+
+.searchHotelForm__input:hover + .searchHotelForm__calendarIcon {
+    color: #000000;
+}
+
+.searchHotelForm__input:focus + .searchHotelForm__calendarIcon {
+    color: #81b3d2;
 }
 
 .searchHotelForm__input::-webkit-input-placeholder,
@@ -508,46 +515,39 @@ a {
 }
 
 .searchHotelForm__button {
+    display: flex;
+
     width: 38px;
     height: 38px;
 
+    transition: color .3s;
+
     border: none;
     background-color: #f2f2f2;
-    background-repeat: no-repeat;
-    background-position: center;
 
     appearance: none;
-    transition: background-image .3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchHotelForm__buttonIcon {
+    transition: color .3s;
+
+    color: #a9a9a9;
 }
 
 .searchHotelForm__button:focus {
     outline: none;
 }
 
-.searchHotelForm__button--minus {
-    background-image: url('../img/minus-icon.svg');
+
+.searchHotelForm__button:hover .searchHotelForm__buttonIcon,
+.searchHotelForm__button:focus .searchHotelForm__buttonIcon {
+    color: #000000;
 }
 
-.searchHotelForm__button--minus:hover,
-.searchHotelForm__button--minus:focus {
-    background-image: url("../img/minus-hover-icon.svg");
-}
-
-.searchHotelForm__button--minus:active {
-    background-image: url("../img/minus-focus-icon.svg");
-}
-
-.searchHotelForm__button--plus {
-    background-image: url('../img/plus-icon.svg');
-}
-
-.searchHotelForm__button--plus:hover,
-.searchHotelForm__button--plus:focus {
-    background-image: url("../img/plus-hover-icon.svg");
-}
-
-.searchHotelForm__button--plus:active {
-    background-image: url("../img/plus-focus-icon.svg");
+.searchHotelForm__button:active .searchHotelForm__buttonIcon{
+    color: #81b3d2;
 }
 
 .searchHotelForm__submit {
@@ -626,14 +626,10 @@ a {
     background-color: #81b3d2;
 }
 
-/* Сначала я сделала иконки через background-image для "a", но оказалось, что  при клике у иконки opacity 0.3, поэтому  я переделала через before */
-
 .footer__socialsLink::before {
     position: absolute;
     top: 50%;
     left: 50%;
-
-    display: block;
 
     content: '';
     transition: opacity .3s;
@@ -696,21 +692,21 @@ a {
     padding-right: 8px;
 }
 
-.footer__devPath {
-    transition: fill .3s;
+.footer__devSvg {
+    transition: color .3s;
 }
 
-.footer__devLink:hover .footer__devPath,
-.footer__devLink:focus .footer__devPath {
-    fill: #81b3d2;
+.footer__devLink:hover .footer__devSvg,
+.footer__devLink:focus .footer__devSvg {
+    color: #81b3d2;
 }
 
 .footer__devLink:focus {
     outline: none;
 }
 
-.footer__devLink:active .footer__devPath {
-    fill: #bdbbbc;
+.footer__devLink:active .footer__devSvg {
+    color: #bdbbbc;
 }
 
 /* Page Inner */
@@ -1071,8 +1067,8 @@ a {
     background-size: 18px 17px;
 }
 
-.hotelCard__star + .hotelCard__star {
-    margin-left: 5px;
+.hotelCard__star:not(:last-child) {
+    margin-right: 5px;
 }
 
 .hotelCard__value {
