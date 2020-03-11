@@ -25,9 +25,25 @@ body {
 }
 
 .container {
+    position: relative;
+
     width: 1200px;
     margin: 0 auto;
 }
+
+/*
+Нужно ли .container задавить  эти  стили , чтобы  футер  прилипал к низу экрана или нет?  Потому  что  на странице  hotels остается   пустое  место  под футером .
+.container {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+}
+*/
 
 .visually-hidden {
     position: absolute;
@@ -49,6 +65,7 @@ body {
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -335,6 +352,43 @@ a {
     justify-content: center;
 }
 
+.advantages__additionalItem .advantages__caption {
+    position: relative;
+}
+
+.advantages__additionalItem .advantages__caption::before {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+
+    content: '';
+    transform: translateX(-50%);
+}
+
+.advantages__caption--house::before {
+    width: 75px;
+    height: 72px;
+
+    background: url('../img/advantages-icon-house.svg') no-repeat center;
+    background-size: 75px 72px;
+}
+
+.advantages__caption--food::before {
+    width: 64px;
+    height: 76px;
+
+    background: url('../img/advantages-icon-food.svg') no-repeat center;
+    background-size: 64px 76px;
+}
+
+.advantages__caption--souvenirs::before {
+    width: 74px;
+    height: 70px;
+
+    background: url('../img/advantages-icon-souvenir.svg') no-repeat center;
+    background-size: 74px 70px;
+}
+
 /* Search hotel */
 
 .searchHotel {
@@ -370,6 +424,15 @@ a {
 }
 
 /* Search hotel form */
+
+.searchHotelRequest {
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background-color: #ffffff;
+}
 
 .searchHotelForm {
     width: 568px;
@@ -560,15 +623,28 @@ a {
     padding-bottom: 16px;
 }
 
+/* Map */
+/* На макете  карта  находится  под футером , как правильно сделать , карте  задать  отрицательный  отступ   или футеру  нужно задать  модификатор  для этой  страницы  и position: absolute ?*/
+.map {
+    margin-bottom: -128px;
+}
+.map__img {
+    display: block;
+}
+
 /* Footer */
 
 .footer {
+    position: relative;
+    z-index: 2;
+
     display: flex;
-    align-items: center;
 
     padding: 36px 100px 32px 120px;
 
     background-color: rgba(255, 255, 255, .9);
+
+    align-items: center;
 }
 
 .footer__contacts {
@@ -766,19 +842,59 @@ a {
     color: #ffffff;
 }
 
+.filtersHotels__label--checkbox {
+    position: relative;
+
+    padding-left: 40px;
+}
+
+.filtersHotels__checkbox:not(:checked) + .filtersHotels__label--checkbox::before {
+    position: absolute;
+    top: -3px;
+    left: 0;
+
+    width: 23px;
+    height: 23px;
+
+    content: '';
+
+    background: url('../img/checkbox-off-icon.svg') no-repeat center;
+    background-size: 23px 23px;
+}
+
+.filtersHotels__checkbox:checked + .filtersHotels__label--checkbox::after {
+    position: absolute;
+    top: -3px;
+    left: 0;
+
+    width: 27px;
+    height: 23px;
+
+    content: '';
+
+    background: url('../img/checkbox-on-icon.svg') no-repeat center;
+    background-size: 27px 23px;
+}
+
 .filtersHotels__sumShow {
+    display: flex;
+
+    width: 315px;
     margin-top: 13px;
     margin-bottom: 13px;
-    border: 2px solid #ffffff;
-    display: flex;
     padding-top: 4px;
     padding-bottom: 4px;
+
+    border: 2px solid #ffffff;
 }
 
 .filtersHotels__sumShowWrapper {
+    display: flex;
+
+    width: 50%;
     margin-top: 0;
     margin-bottom: 0;
-    display: flex;
+
     justify-content: center;
     align-items: center;
 }
@@ -791,51 +907,140 @@ a {
     margin-right: 5px;
 }
 
-.filtersHotels__input {
+.filtersHotels__sum {
+    line-height: 21px;
+
+    color: #ffffff;
+}
+
+/* .filtersHotels__input {
     line-height: 21px;
 
     color: #ffffff;
     border: 0;
     outline: none;
     background-color: transparent;
-}
+} */
 
-.filtersHotels__input::-webkit-input-placeholder {
+/* .filtersHotels__input::-webkit-input-placeholder {
     font-family: "PT Sans", Arial, sans-serif;
     font-weight: 400;
 
     color: #ffffff;
-}
+} */
 
-.filtersHotels__input:-ms-input-placeholder {
+/* .filtersHotels__input:-ms-input-placeholder {
     font-family: "PT Sans", Arial, sans-serif;
     font-weight: 400;
 
     color: #ffffff;
-}
+} */
 
-.filtersHotels__input::-ms-input-placeholder {
+/* .filtersHotels__input::-ms-input-placeholder {
     font-family: "PT Sans", Arial, sans-serif;
     font-weight: 400;
 
     color: #ffffff;
-}
+} */
 
-.filtersHotels__input::placeholder {
+/* .filtersHotels__input::placeholder {
     font-family: "PT Sans", Arial, sans-serif;
     font-weight: 400;
 
     color: #ffffff;
-}
+} */
 
 .filtersHotels__sumRange {
     display: flex;
+    align-items: center;
 
     margin-bottom: 22px;
+    position: relative;
 }
 
 .filtersHotels__range {
+    position: relative;
+
     width: 100%;
+    height: 2px;
+}
+
+.filtersHotels__range::before,
+.filtersHotels__range::after {
+    position: absolute;
+    top: 0;
+
+    height: 100%;
+
+    content: '';
+}
+
+.filtersHotels__range::before {
+    left: -18px;
+
+    width: calc(100% - 35px);
+
+    background-color: #ffffff;
+}
+
+.filtersHotels__range::after {
+    right: -18px;
+
+    width: 75px;
+
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.filtersHotels__sumButton {
+    position: relative;
+    z-index: 1;
+
+    width: 20px;
+    height: 20px;
+
+    transition: width .3s, height .3s;
+    transition: transform .3s;
+
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.filtersHotels__sumButton--max {
+    right: 60px;
+}
+
+.filtersHotels__sumButton::before {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+
+    width: 4px;
+    height: 4px;
+
+    content: '';
+    transition: transform .3s;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.filtersHotels__sumButton:focus {
+    outline: none;
+}
+
+.filtersHotels__sumButton:hover,
+.filtersHotels__sumButton:focus {
+    transform: scale(1.1);
+}
+
+.filtersHotels__sumButton:hover::before,
+.filtersHotels__sumButton:focus::before {
+    z-index: 1;
+
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .filtersHotels__submit {
@@ -933,17 +1138,34 @@ a {
 }
 
 .sortingHotels__gradeItem:not(:last-child) {
-    margin-right: 12px;
+    margin-right: 2px;
 }
 
 .sortingHotels__gradeArrow {
-    /* Временно */
-    display: block;
+    padding: 5px;
+}
 
-    min-width: 10px;
-    min-height: 11px;
+.sortingHotels__gradeIcon {
+    width: 11px;
+    height: 10px;
 
-    background-color: lightgrey;
+    transition: color .3s;
+
+    color: #cacaca;
+}
+
+.sortingHotels__gradeArrow:hover .sortingHotels__gradeIcon,
+.sortingHotels__gradeArrow:focus .sortingHotels__gradeIcon {
+    color: #231f20;
+}
+
+.sortingHotels__gradeArrow:active .sortingHotels__gradeIcon,
+.sortingHotels__gradeArrow--active .sortingHotels__gradeIcon {
+    color: #81b3d2;
+}
+
+.sortingHotels__gradeArrow--active {
+    pointer-events: none;
 }
 
 /* Search results */
