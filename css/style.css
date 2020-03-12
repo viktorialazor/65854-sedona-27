@@ -31,20 +31,6 @@ body {
     margin: 0 auto;
 }
 
-/*
-Нужно ли .container задавить  эти  стили , чтобы  футер  прилипал к низу экрана или нет?  Потому  что  на странице  hotels остается   пустое  место  под футером .
-.container {
-    display: flex;
-    flex-direction: column;
-
-    min-height: 100vh;
-}
-
-.footer {
-    margin-top: auto;
-}
-*/
-
 .visually-hidden {
     position: absolute;
 
@@ -273,8 +259,6 @@ a {
     flex-basis: calc(100% - 800px);
 }
 
-/*В обычных карточках  цвет  по умолчанию #000000, который задан body, поэтому  этим  карточкам   цвет  не указан. Но цвет  заголовков caption в обычных карточках  #333333. И когда я карточкам  с белым текстом   указала цвет  #ffffff, то  caption в этих  карточках  остался  с цветом  #333333, поэтому  я ему указала inherit. Не пойму как мне нужно сделать  по-другому.*/
-
 .advantages__card {
     display: flex;
     flex-direction: column;
@@ -425,21 +409,19 @@ a {
 
 /* Search hotel form */
 
-.searchHotelRequest {
+.searchHotelForm {
     position: absolute;
     left: 50%;
 
-    transform: translateX(-50%);
-
-    background-color: #ffffff;
-}
-
-.searchHotelForm {
     width: 568px;
     margin: 0 auto;
     padding: 55px;
 
-    box-shadow: 0 7px 15px rgba(0, 1, 1, .15);}
+    transform: translateX(-50%);
+
+    background-color: #ffffff;
+    box-shadow: 0 7px 15px rgba(0, 1, 1, .15);
+}
 
 .searchHotelForm__row {
     position: relative;
@@ -624,12 +606,13 @@ a {
 }
 
 /* Map */
-/* На макете  карта  находится  под футером , как правильно сделать , карте  задать  отрицательный  отступ   или футеру  нужно задать  модификатор  для этой  страницы  и position: absolute ?*/
+
 .map {
+    height: 594px;
     margin-bottom: -128px;
-}
-.map__img {
-    display: block;
+
+    background: url('../img/map.jpg') no-repeat center;
+    background-size: 1200px 594px;
 }
 
 /* Footer */
@@ -836,43 +819,41 @@ a {
     margin-bottom: 20px;
 }
 
-.filtersHotels__label {
+.filtersHotels__labelCheckbox {
     line-height: 21px;
+
+    position: relative;
+
+    padding-left: 40px;
 
     color: #ffffff;
 }
 
-.filtersHotels__label--checkbox {
-    position: relative;
-
-    padding-left: 40px;
-}
-
-.filtersHotels__checkbox:not(:checked) + .filtersHotels__label--checkbox::before {
+.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox::before,
+.filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox::after {
     position: absolute;
     top: -3px;
     left: 0;
 
-    width: 23px;
     height: 23px;
 
     content: '';
 
-    background: url('../img/checkbox-off-icon.svg') no-repeat center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox::before {
+    width: 23px;
+
+    background-image: url('../img/checkbox-off-icon.svg');
     background-size: 23px 23px;
 }
 
-.filtersHotels__checkbox:checked + .filtersHotels__label--checkbox::after {
-    position: absolute;
-    top: -3px;
-    left: 0;
-
+.filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox::after {
     width: 27px;
-    height: 23px;
 
-    content: '';
-
-    background: url('../img/checkbox-on-icon.svg') no-repeat center;
+    background-image: url('../img/checkbox-on-icon.svg');
     background-size: 27px 23px;
 }
 
@@ -903,8 +884,12 @@ a {
     border-right: 2px solid #ffffff;
 }
 
-.filtersHotels__sumShowWrapper .filtersHotels__label {
+.filtersHotels__labelInput {
+    line-height: 21px;
+
     margin-right: 5px;
+
+    color: #ffffff;
 }
 
 .filtersHotels__sum {
