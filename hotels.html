@@ -5,21 +5,21 @@
   <title>HTML Academy: Гостиницы Седоны</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body class="container">
   <header class="header">
     <nav class="header__navigation">
       <a class="header__logo" href="./index.html" aria-label="Логотип Седона"></a>
       <ul class="header__menu">
-        <li class="header__menuItem"><a class="header__menuLink" href="./index.html">Информация</a></li>
+        <li class="header__menuItem"><a class="header__menuLink" href="">Информация</a></li>
         <li class="header__menuItem"><a class="header__menuLink" href="">Фото и видео</a></li>
         <li class="header__menuItem"><a class="header__menuLink" href="">Карта штата</a></li>
         <li class="header__menuItem"><a class="header__menuLink header__menuLink--active" href="">Гостиницы</a></li>
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="main">
     <section class="filtersHotels">
       <h2 class="visually-hidden">Фильтр гостиниц</h2>
       <form class="filtersHotels__form" action="https://echo.htmlacademy.ru" method="get">
@@ -60,24 +60,14 @@
         <fieldset class="filtersHotels__fieldset">
           <legend class="filtersHotels__legend">Стоимость в сутки (Р):</legend>
           <div class="filtersHotels__sumShow">
-            <!-- С input не получается  выровнять  текст   по центру , input не могу задать  ширину, auto занимает  все пространство , как сделать  так , чтобы  занимало только  ширину текста   не знаю. Пока стили  для input закомментировала  -->
-            <p class="filtersHotels__sumShowWrapper">
-              <label class="filtersHotels__labelInput" for="min-sum">От</label>
-              <!-- <input class="filtersHotels__input" id="min-sum" type="text" name="min-sum" placeholder="0"> -->
-              <span class="filtersHotels__sum">0</span>
-            </p>
-            <p class="filtersHotels__sumShowWrapper">
-              <label class="filtersHotels__labelInput" for="max-sum">До</label>
-              <!-- <input class="filtersHotels__input" id="max-sum" type="text" name="max-sum" placeholder="3000"> -->
-              <span class="filtersHotels__sum">3000</span>
-            </p>
+            <label class="filtersHotels__labelInput">От <input class="filtersHotels__input" type="number" name="min-sum" id="min-sum" value="0"></label>
+            <label class="filtersHotels__labelInput">До <input class="filtersHotels__input" type="number" name="max-sum" id="max-sum" value="3000"></label>
           </div>
           <div class="filtersHotels__sumRange">
-            <label class="visually-hidden" for="range">Диапазон сумм</label>
             <button class="filtersHotels__sumButton filtersHotels__sumButton--min" type="button"></button>
-            <!-- Не знаю, как можно стилизовать   input range, на лекции были checkbox и radio -->
-            <span class="filtersHotels__range"></span>
-            <!-- <input class="filtersHotels__range" id="range" type="range" name="range"> -->
+            <div class="filtersHotels__scale">
+              <div class="filtersHotels__bar"></div>
+            </div>
             <button class="filtersHotels__sumButton filtersHotels__sumButton--max" type="button"></button>
           </div>
           <button class="filtersHotels__submit button button--white" type="submit">Показать</button>
@@ -197,10 +187,12 @@
     </section>
   </main>
   <footer class="footer">
-    <p class="footer__contacts">
-      <a class="footer__contactsLink" href="./index.html">#visitSEDONA</a>
-      <a class="footer__contactsLink" href="">Тел: +7(495) 666-02-66</a>
-    </p>
+    <div class="footer__contacts">
+      <p class="footer__contactsLinks">
+        <a class="footer__contactsLink" href="./index.html">#visitSEDONA</a>
+        <a class="footer__contactsLink" href="tel:+74956660266">Тел: +7(495) 666-02-66</a>
+      </p>
+    </div>
     <ul class="footer__socials">
       <li><a class="footer__socialsLink footer__socialsLink--tw" aria-label="Твиттер" href=""></a></li>
       <li><a class="footer__socialsLink footer__socialsLink--fb" aria-label="Фейсбук" href=""></a></li>

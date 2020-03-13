@@ -5,7 +5,7 @@
   <title>HTML Academy: Седона</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.min.css">
 </head>
 <body class="container">
   <header class="header">
@@ -19,8 +19,9 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="main">
     <section class="banner">
+      <h2 class="visually-hidden">Баннер</h2>
       <img class="banner__img" src="./img/banner-index.jpg" width="1200" height="510" alt="Скалы Седоны">
     </section>
     <section class="advantages">
@@ -83,6 +84,7 @@
       </ul>
     </section>
     <section class="searchHotel">
+      <h2 class="visually-hidden">Форма запроса для брони гостиницы</h2>
       <span class="searchHotel__title">Заинтересовались?</span>
       <p class="searchHotel__text">Укажите предполагаемые даты поездки, <br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
       <button class="searchHotel__button button button--brown" type="button">Поиск гостиницы в Седоне</button>
@@ -141,13 +143,17 @@
       <button class="searchHotelForm__submit button button--blue" type="submit">Найти</button>
     </form>
     <section class="map">
+      <h2 class="visually-hidden">Карта Седоны</h2>
     </section>
   </main>
   <footer class="footer">
-    <p class="footer__contacts">
-      <a class="footer__contactsLink" href="./index.html">#visitSEDONA</a>
-      <a class="footer__contactsLink" href="">Тел: +7(495) 666-02-66</a>
-    </p>
+    <!-- Прочитала  в ТЗ, что  три  части  футера  должны быть  выровнены посередине, без юfooter__contactsLinks не получается вывовнять  блок .footer__contacts-->
+    <div class="footer__contacts">
+      <p class="footer__contactsLinks">
+        <a class="footer__contactsLink" href="./index.html">#visitSEDONA</a>
+        <a class="footer__contactsLink" href="tel:+74956660266">Тел: +7(495) 666-02-66</a>
+      </p>
+    </div>
     <ul class="footer__socials">
       <li><a class="footer__socialsLink footer__socialsLink--tw" aria-label="Твиттер" href=""></a></li>
       <li><a class="footer__socialsLink footer__socialsLink--fb" aria-label="Фейсбук" href=""></a></li>

@@ -20,7 +20,7 @@ body {
     text-transform: uppercase;
 
     color: #000000;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
@@ -58,10 +58,15 @@ a {
     text-decoration: none;
 }
 
+.main {
+    background-color: #ffffff;
+}
+
 .button {
-    font-family: "PT Sans", Arial, sans-serif;
+    font-family: 'PT Sans', Arial, sans-serif;
     font-weight: 700;
 
+    cursor: pointer;
     transition: background-color .3s, color .3s;
     text-align: center;
     vertical-align: middle;
@@ -113,6 +118,10 @@ a {
 }
 
 /* Header */
+
+.header {
+    background-color: #ffffff;
+}
 
 .header__navigation {
     position: relative;
@@ -611,7 +620,7 @@ a {
     height: 594px;
     margin-bottom: -128px;
 
-    background: url('../img/map.jpg') no-repeat center;
+    background: #f2f1ef url('../img/map.jpg') no-repeat center;
     background-size: 1200px 594px;
 }
 
@@ -623,7 +632,8 @@ a {
 
     display: flex;
 
-    padding: 36px 100px 32px 120px;
+    padding-top: 36px;
+    padding-bottom: 32px;
 
     background-color: rgba(255, 255, 255, .9);
 
@@ -631,6 +641,15 @@ a {
 }
 
 .footer__contacts {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% / 3);
+
+    align-items: center;
+}
+
+.footer__contactsLinks {
     font-size: 21px;
     font-weight: 700;
     line-height: 26px;
@@ -663,11 +682,15 @@ a {
 
 .footer__socials {
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
+
+    width: calc(100% / 3);
+    margin-top: 0;
+    margin-bottom: 0;
     padding-left: 0;
 
     list-style: none;
+
+    justify-content: center;
 }
 
 .footer__socialsLink {
@@ -740,10 +763,11 @@ a {
 
     display: flex;
 
-    margin-left: auto;
+    width: calc(100% / 3);
 
-    color: #000000;
+    color: #000;
 
+    justify-content: center;
     align-items: center;
 }
 
@@ -776,7 +800,7 @@ a {
     padding: 25px 72px 30px;
 
     background: #4a769a url('../img/filter-background.jpg') no-repeat center;
-    background-size: 1200px 220px;
+    background-size: cover;
 }
 
 .filtersHotels__form {
@@ -829,6 +853,10 @@ a {
     color: #ffffff;
 }
 
+.filtersHotels__checkbox:focus + .filtersHotels__labelCheckbox {
+    color: #000000;
+}
+
 .filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox::before,
 .filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox::after {
     position: absolute;
@@ -857,123 +885,89 @@ a {
     background-size: 27px 23px;
 }
 
+.filtersHotels__checkbox:not(:checked):disabled + .filtersHotels__labelCheckbox::before,
+.filtersHotels__checkbox:checked:disabled + .filtersHotels__labelCheckbox::after {
+    filter: brightness(0.5);
+}
+
 .filtersHotels__sumShow {
+    position: relative;
+
     display: flex;
 
-    width: 315px;
+    width: 330px;
+    height: 40px;
     margin-top: 13px;
     margin-bottom: 13px;
-    padding-top: 4px;
-    padding-bottom: 4px;
 
     border: 2px solid #ffffff;
+    border-radius: 2px;
 }
 
-.filtersHotels__sumShowWrapper {
-    display: flex;
+.filtersHotels__sumShow::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-    width: 50%;
-    margin-top: 0;
-    margin-bottom: 0;
+    width: 2px;
+    height: 22px;
 
-    justify-content: center;
-    align-items: center;
-}
+    content: '';
+    transform: translate(-50%, -50%);
 
-.filtersHotels__sumShowWrapper:first-child {
-    border-right: 2px solid #ffffff;
+    background-color: #ffffff;
 }
 
 .filtersHotels__labelInput {
     line-height: 21px;
 
-    margin-right: 5px;
+    display: flex;
+
+    width: 155px;
+    padding-left: 65px;
+
+    cursor: pointer;
 
     color: #ffffff;
+
+    align-items: center;
 }
 
-.filtersHotels__sum {
+.filtersHotels__input {
     line-height: 21px;
 
-    color: #ffffff;
-}
-
-/* .filtersHotels__input {
-    line-height: 21px;
+    width: 50px;
+    margin: 0;
 
     color: #ffffff;
     border: 0;
     outline: none;
     background-color: transparent;
-} */
-
-/* .filtersHotels__input::-webkit-input-placeholder {
-    font-family: "PT Sans", Arial, sans-serif;
-    font-weight: 400;
-
-    color: #ffffff;
-} */
-
-/* .filtersHotels__input:-ms-input-placeholder {
-    font-family: "PT Sans", Arial, sans-serif;
-    font-weight: 400;
-
-    color: #ffffff;
-} */
-
-/* .filtersHotels__input::-ms-input-placeholder {
-    font-family: "PT Sans", Arial, sans-serif;
-    font-weight: 400;
-
-    color: #ffffff;
-} */
-
-/* .filtersHotels__input::placeholder {
-    font-family: "PT Sans", Arial, sans-serif;
-    font-weight: 400;
-
-    color: #ffffff;
-} */
+}
 
 .filtersHotels__sumRange {
+    position: relative;
+
     display: flex;
-    align-items: center;
 
     margin-bottom: 22px;
-    position: relative;
+
+    align-items: center;
 }
 
-.filtersHotels__range {
-    position: relative;
-
-    width: 100%;
+.filtersHotels__scale {
+    width: calc(100% + 20px);
     height: 2px;
-}
-
-.filtersHotels__range::before,
-.filtersHotels__range::after {
-    position: absolute;
-    top: 0;
-
-    height: 100%;
-
-    content: '';
-}
-
-.filtersHotels__range::before {
-    left: -18px;
-
-    width: calc(100% - 35px);
-
-    background-color: #ffffff;
-}
-
-.filtersHotels__range::after {
-    right: -18px;
-
-    width: 75px;
+    margin-right: -20px;
 
     background-color: rgba(255, 255, 255, .3);
+}
+
+.filtersHotels__bar {
+    width: 80%;
+    height: 2px;
+
+    background-color: #ffffff;
 }
 
 .filtersHotels__sumButton {
@@ -983,6 +977,7 @@ a {
     width: 20px;
     height: 20px;
 
+    cursor: pointer;
     transition: width .3s, height .3s;
     transition: transform .3s;
 
@@ -1010,6 +1005,7 @@ a {
 
     border-radius: 50%;
     background-color: rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
 }
 
 .filtersHotels__sumButton:focus {
