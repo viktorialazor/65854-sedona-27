@@ -190,6 +190,7 @@ a {
 
 .header__menuLink--active {
     color: #766357;
+    pointer-events: none;
 }
 
 /* Main */
@@ -839,6 +840,10 @@ a {
     list-style: none;
 }
 
+.filtersHotels__item {
+    position: relative;
+}
+
 .filtersHotels__item:not(:last-child) {
     margin-bottom: 20px;
 }
@@ -850,44 +855,49 @@ a {
 
     padding-left: 40px;
 
+    user-select: none;
+
     color: #ffffff;
 }
 
-.filtersHotels__checkbox:focus + .filtersHotels__labelCheckbox {
-    color: #000000;
+.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox + .filtersHotels__checkboxIcon {
+    display: none;
 }
 
-.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox::before,
-.filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox::after {
+.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox::before {
     position: absolute;
     top: -3px;
     left: 0;
 
+    width: 23px;
     height: 23px;
 
     content: '';
 
-    background-repeat: no-repeat;
-    background-position: center;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    background-color: transparent;
 }
 
-.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox::before {
-    width: 23px;
+.filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox + .filtersHotels__checkboxIcon {
+    position: absolute;
+    top: 1px;
+    left: 0;
 
-    background-image: url('../img/checkbox-off-icon.svg');
-    background-size: 23px 23px;
-}
-
-.filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox::after {
     width: 27px;
+    height: 23px;
 
-    background-image: url('../img/checkbox-on-icon.svg');
-    background-size: 27px 23px;
+    pointer-events: none;
+
+    color: #ffffff;
 }
 
-.filtersHotels__checkbox:not(:checked):disabled + .filtersHotels__labelCheckbox::before,
-.filtersHotels__checkbox:checked:disabled + .filtersHotels__labelCheckbox::after {
-    filter: brightness(0.5);
+.filtersHotels__checkbox:not(:checked):disabled + .filtersHotels__labelCheckbox::before {
+    border-color: #6a6a6a;
+}
+
+.filtersHotels__checkbox:checked:disabled + .filtersHotels__labelCheckbox + .filtersHotels__checkboxIcon {
+    color: #6a6a6a;
 }
 
 .filtersHotels__sumShow {
@@ -933,11 +943,13 @@ a {
     align-items: center;
 }
 
+/* Указала height: 36px; и margin-left: 3px; потому  что  на IE инпут  не выравнивается  по середине и прилипает  к лейблу*/
 .filtersHotels__input {
     line-height: 21px;
 
     width: 50px;
-    margin: 0;
+    height: 36px;
+    margin: 0 0 0 3px;
 
     color: #ffffff;
     border: 0;
@@ -1094,6 +1106,10 @@ a {
 .sortingHotels__optionsName:focus,
 .sortingHotels__optionsName--active {
     color: #81b3d2;
+}
+
+.sortingHotels__optionsName--active {
+    pointer-events: none;
 }
 
 .sortingHotels__optionsName:active {
