@@ -860,7 +860,7 @@ a {
     color: #ffffff;
 }
 
-.filtersHotels__checkbox:not(:checked) + .filtersHotels__labelCheckbox + .filtersHotels__checkboxIcon {
+.filtersHotels__checkbox:not(:checked) ~ .filtersHotels__checkboxIcon {
     display: none;
 }
 
@@ -879,7 +879,7 @@ a {
     background-color: transparent;
 }
 
-.filtersHotels__checkbox:checked + .filtersHotels__labelCheckbox + .filtersHotels__checkboxIcon {
+.filtersHotels__checkbox:checked ~ .filtersHotels__checkboxIcon {
     position: absolute;
     top: 1px;
     left: 0;
@@ -892,11 +892,24 @@ a {
     color: #ffffff;
 }
 
+/* Когда табом  по странице  проходишь, не видно на каком чекбоксе находишься, можно ли такой  outline оставить   или цвет  у лейблов и чекбоксов менять , но тогда  на какой, синий как у ссылок не видно, кажется , что  чекбокс становится   неактивным . Или вообще с этим  ничего не делать? 
+И еще, на многих элементах , когда табом  проходишь, outline черный, нужно ли менять цвет ? */
+
+.filtersHotels__checkbox:focus + .filtersHotels__labelCheckbox {
+    outline-width: 1px;
+    outline-style: dotted;
+    outline-offset: 5px;
+}
+
+.filtersHotels__checkbox:disabled + .filtersHotels__labelCheckbox {
+    color: #6a6a6a;
+}
+
 .filtersHotels__checkbox:not(:checked):disabled + .filtersHotels__labelCheckbox::before {
     border-color: #6a6a6a;
 }
 
-.filtersHotels__checkbox:checked:disabled + .filtersHotels__labelCheckbox + .filtersHotels__checkboxIcon {
+.filtersHotels__checkbox:checked:disabled ~ .filtersHotels__checkboxIcon {
     color: #6a6a6a;
 }
 
@@ -943,7 +956,7 @@ a {
     align-items: center;
 }
 
-/* Указала height: 36px; и margin-left: 3px; потому  что  на IE инпут  не выравнивается  по середине и прилипает  к лейблу*/
+/* Не поняла комментарий  про margin-left: 3px; мне его совсем убрать  и ничего страшного , что  между лейблом и инпутом  нет  отступа   на IE или на padding-left заменить  нужно? */
 .filtersHotels__input {
     line-height: 21px;
 
