@@ -139,6 +139,13 @@ a {
     background-size: 138px 70px;
 }
 
+.header__logo:focus {
+    outline-width: 2px;
+    outline-style: dotted;
+    outline-color: #669ec0;
+    outline-offset: 5px;
+}
+
 .header__menu {
     display: flex;
     align-items: center;
@@ -419,18 +426,62 @@ a {
 
 /* Search hotel form */
 
+@keyframes show {
+  0% {
+    transform: translateY(-300px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+/*Убрала transform: translate; потому  что  портилась  анимация*/
 .searchHotelForm {
+    display: none;
     position: absolute;
     left: 50%;
 
     width: 568px;
-    margin: 0 auto;
+    margin-left: -284px;
     padding: 55px;
-
-    transform: translateX(-50%);
 
     background-color: #ffffff;
     box-shadow: 0 7px 15px rgba(0, 1, 1, .15);
+}
+
+.searchHotelForm--active {
+    display: block;
+}
+
+.searchHotelForm--show {
+    animation: show 1s;
+}
+
+.searchHotelForm--error {
+    animation: shake .6s;
 }
 
 .searchHotelForm__row {
@@ -677,6 +728,10 @@ a {
     color: #81b3d2;
 }
 
+.footer__contactsLink:focus {
+    outline: none;
+}
+
 .footer__contactsLink:active {
     color: rgba(0, 0, 0, .3);
 }
@@ -750,6 +805,11 @@ a {
 .footer__socialsLink:focus {
     background-color: #669ec0;
 }
+
+.footer__socialsLink:focus {
+    outline: none;
+}
+
 
 .footer__socialsLink:active {
     background-color: #5496bd;
@@ -892,9 +952,6 @@ a {
     color: #ffffff;
 }
 
-/* Когда табом  по странице  проходишь, не видно на каком чекбоксе находишься, можно ли такой  outline оставить   или цвет  у лейблов и чекбоксов менять , но тогда  на какой, синий как у ссылок не видно, кажется , что  чекбокс становится   неактивным . Или вообще с этим  ничего не делать? 
-И еще, на многих элементах , когда табом  проходишь, outline черный, нужно ли менять цвет ? */
-
 .filtersHotels__checkbox:focus + .filtersHotels__labelCheckbox {
     outline-width: 1px;
     outline-style: dotted;
@@ -956,13 +1013,12 @@ a {
     align-items: center;
 }
 
-/* Не поняла комментарий  про margin-left: 3px; мне его совсем убрать  и ничего страшного , что  между лейблом и инпутом  нет  отступа   на IE или на padding-left заменить  нужно? */
 .filtersHotels__input {
     line-height: 21px;
 
     width: 50px;
     height: 36px;
-    margin: 0 0 0 3px;
+    margin-left: 3px;
 
     color: #ffffff;
     border: 0;
@@ -1121,6 +1177,10 @@ a {
     color: #81b3d2;
 }
 
+.sortingHotels__optionsName:focus {
+    outline: none;
+}
+
 .sortingHotels__optionsName--active {
     pointer-events: none;
 }
@@ -1169,6 +1229,10 @@ a {
     color: #231f20;
 }
 
+.sortingHotels__gradeArrow:focus {
+    outline: none;
+}
+
 .sortingHotels__gradeArrow:active .sortingHotels__gradeIcon,
 .sortingHotels__gradeArrow--active .sortingHotels__gradeIcon {
     color: #81b3d2;
@@ -1211,6 +1275,10 @@ a {
     margin-right: 30px;
 }
 
+.hotelCard__imgLink:focus {
+    outline-color: #669ec0;
+}
+
 .hotelCard__img {
     display: block;
 }
@@ -1232,6 +1300,10 @@ a {
 .hotelCard__titleLink:hover,
 .hotelCard__titleLink:focus {
     color: #81b3d2;
+}
+
+.hotelCard__titleLink:focus {
+    outline: none;
 }
 
 .hotelCard__titleLink:active {
