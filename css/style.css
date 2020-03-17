@@ -25,8 +25,6 @@ body {
 }
 
 .container {
-    position: relative;
-
     width: 1200px;
     margin: 0 auto;
 }
@@ -396,6 +394,8 @@ a {
     padding-top: 55px;
 
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .searchHotel__title {
@@ -419,6 +419,9 @@ a {
     font-size: 21px;
     line-height: 26px;
 
+    position: relative;
+    z-index: 1;
+
     width: 568px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -428,18 +431,45 @@ a {
 
 @keyframes show {
   0% {
-    transform: translateY(-300px);
+    visibility: hidden;
+
+    transform: translate(-50%, -20%);
+
+    opacity: 0;
   }
 
   100% {
-    transform: translateY(0);
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+
+    opacity: 1;
   }
 }
+
+@keyframes hide {
+  0% {
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+
+    opacity: 1;
+}
+
+100% {
+    visibility: hidden;
+
+    transform: translate(-50%, -20%);
+
+    opacity: 0;
+  }
+}
+
 
 @keyframes shake {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 
   10%,
@@ -447,37 +477,41 @@ a {
   50%,
   70%,
   90% {
-    transform: translateX(-10px);
+    transform: translateX(calc(-50% - 10px));
   }
 
   20%,
   40%,
   60%,
   80% {
-    transform: translateX(10px);
+    transform: translateX(calc(-50% + 10px));
   }
 }
 
-/*Убрала transform: translate; потому  что  портилась  анимация*/
 .searchHotelForm {
-    display: none;
     position: absolute;
     left: 50%;
 
     width: 568px;
-    margin-left: -284px;
     padding: 55px;
+
+    transform: translateX(-50%);
+    animation: hide cubic-bezier(0, .4, .6, .8) .6s forwards;
 
     background-color: #ffffff;
     box-shadow: 0 7px 15px rgba(0, 1, 1, .15);
 }
 
-.searchHotelForm--active {
-    display: block;
+.searchHotelForm--hide {
+    visibility: hidden;
+
+    animation: none;
+
+    opacity: 0;
 }
 
 .searchHotelForm--show {
-    animation: show 1s;
+    animation: show cubic-bezier(0, .4, .6, .8) .6s;
 }
 
 .searchHotelForm--error {
@@ -512,6 +546,7 @@ a {
 
 .searchHotelForm__input {
     width: 346px;
+    margin-left: auto;
     padding-right: 12px;
     padding-left: 12px;
 }
