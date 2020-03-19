@@ -12,14 +12,13 @@ button.addEventListener("click", function(evt) {
 
 	if(popup.classList.contains("searchHotelForm--hide")) {
 		popup.classList.remove("searchHotelForm--hide");
-	}
-
-	if(popup.classList.contains("searchHotelForm--show")) {
+		popup.classList.add("searchHotelForm--show");
+	} else if(popup.classList.contains("searchHotelForm--show")) {
 		popup.classList.remove("searchHotelForm--show");
 		popup.classList.remove("searchHotelForm--error");
-	} else {
-		popup.classList.add("searchHotelForm--show");
+		popup.classList.add("searchHotelForm--hide");
 	}
+
 });
 
 popup.addEventListener("submit", function(evt) {
@@ -37,6 +36,7 @@ window.addEventListener("keydown", function(evt) {
 			evt.preventDefault();
 			popup.classList.remove("searchHotelForm--show");
 			popup.classList.remove("searchHotelForm--error");
+			popup.classList.add("searchHotelForm--hide");
 		}
 	}
 });
